@@ -1,0 +1,327 @@
+[
+  {
+    "id": "1",
+    "word": "ephemeral",
+    "definition": "Lasting for a very short time",
+    "choices": [
+      "Lasting forever",
+      "Lasting for a very short time",
+      "Highly valuable",
+      "Extremely large"
+    ],
+    "correctAnswer": "Lasting for a very short time",
+    "category": "vocabulary"
+  },
+  {
+    "id": "2",
+    "word": "ubiquitous",
+    "definition": "Present, appearing, or found everywhere",
+    "choices": [
+      "Rare and valuable",
+      "Present everywhere",
+      "Difficult to understand",
+      "Ancient"
+    ],
+    "correctAnswer": "Present everywhere",
+    "category": "vocabulary"
+  },
+  {
+    "id": "3",
+    "word": "serendipity",
+    "definition": "The occurrence of events by chance in a happy or beneficial way",
+    "choices": [
+      "Planned success",
+      "Happy accident",
+      "Predictable outcome",
+      "Painful experience"
+    ],
+    "correctAnswer": "Happy accident",
+    "category": "vocabulary"
+  },
+  {
+    "id": "4",
+    "word": "loquacious",
+    "definition": "Tending to talk a great deal; talkative",
+    "choices": [
+      "Quiet and reserved",
+      "Highly intelligent",
+      "Extremely talkative",
+      "Physically strong"
+    ],
+    "correctAnswer": "Extremely talkative",
+    "category": "vocabulary"
+  },
+  {
+    "id": "5",
+    "word": "magnanimous",
+    "definition": "Generous or forgiving, especially toward a rival or less powerful person",
+    "choices": [
+      "Physically large",
+      "Generous in spirit",
+      "Highly magnetic",
+      "Very angry"
+    ],
+    "correctAnswer": "Generous in spirit",
+    "category": "vocabulary"
+  },
+  {
+    "id": "6",
+    "word": "obfuscate",
+    "definition": "To deliberately make something difficult to understand",
+    "choices": [
+      "To clarify",
+      "To confuse intentionally",
+      "To build quickly",
+      "To observe carefully"
+    ],
+    "correctAnswer": "To confuse intentionally",
+    "category": "vocabulary"
+  },
+  {
+    "id": "7",
+    "word": "pernicious",
+    "definition": "Having a harmful effect, especially in a gradual or subtle way",
+    "choices": [
+      "Highly nutritious",
+      "Extremely fast",
+      "Slowly harmful",
+      "Very expensive"
+    ],
+    "correctAnswer": "Slowly harmful",
+    "category": "vocabulary"
+  },
+  {
+    "id": "8",
+    "word": "quintessential",
+    "definition": "Representing the most perfect or typical example of a quality or class",
+    "choices": [
+      "Average example",
+      "Perfect representation",
+      "Fifth in sequence",
+      "Ancient artifact"
+    ],
+    "correctAnswer": "Perfect representation",
+    "category": "vocabulary"
+  },
+  {
+    "id": "9",
+    "word": "recalcitrant",
+    "definition": "Having an obstinately uncooperative attitude toward authority or discipline",
+    "choices": [
+      "Highly cooperative",
+      "Stubbornly resistant",
+      "Quick to learn",
+      "Physically weak"
+    ],
+    "correctAnswer": "Stubbornly resistant",
+    "category": "vocabulary"
+  },
+  {
+    "id": "10",
+    "word": "sycophant",
+    "definition": "A person who acts obsequiously toward someone important in order to gain advantage",
+    "choices": [
+      "Honest critic",
+      "Flatterer for gain",
+      "Medical professional",
+      "Ancient philosopher"
+    ],
+    "correctAnswer": "Flatterer for gain",
+    "category": "vocabulary"
+  },
+  {
+    "id": "11",
+    "word": "trepidation",
+    "definition": "A feeling of fear or agitation about something that may happen",
+    "choices": [
+      "Great excitement",
+      "Fearful anticipation",
+      "Complete certainty",
+      "Physical strength"
+    ],
+    "correctAnswer": "Fearful anticipation",
+    "category": "vocabulary"
+  },
+  {
+    "id": "12",
+    "word": "ubiquitous",
+    "definition": "Present, appearing, or found everywhere",
+    "choices": [
+      "Extremely rare",
+      "Present everywhere",
+      "Highly valuable",
+      "Difficult to find"
+    ],
+    "correctAnswer": "Present everywhere",
+    "category": "vocabulary"
+  },
+  {
+    "id": "13",
+    "word": "voracious",
+    "definition": "Wanting or devouring great quantities of something",
+    "choices": [
+      "Very picky",
+      "Extremely hungry",
+      "Highly selective",
+      "Slow to act"
+    ],
+    "correctAnswer": "Extremely hungry",
+    "category": "vocabulary"
+  },
+  {
+    "id": "14",
+    "word": "wanton",
+    "definition": "Deliberate and unprovoked (typically of something cruel or violent)",
+    "choices": [
+      "Carefully planned",
+      "Random and unprovoked",
+      "Highly justified",
+      "Weak and ineffective"
+    ],
+    "correctAnswer": "Random and unprovoked",
+    "category": "vocabulary"
+  },
+  {
+    "id": "15",
+    "word": "xenophobia",
+    "definition": "Dislike of or prejudice against people from other countries",
+    "choices": [
+      "Love of travel",
+      "Fear of foreigners",
+      "Study of cultures",
+      "Medical condition"
+    ],
+    "correctAnswer": "Fear of foreigners",
+    "category": "vocabulary"
+  },
+  {
+    "id": "16",
+    "word": "zealous",
+    "definition": "Having or showing great energy or enthusiasm in pursuit of a cause or objective",
+    "choices": [
+      "Highly enthusiastic",
+      "Completely indifferent",
+      "Physically strong",
+      "Very sleepy"
+    ],
+    "correctAnswer": "Highly enthusiastic",
+    "category": "vocabulary"
+  },
+  {
+    "id": "17",
+    "word": "acerbic",
+    "definition": "Sharp and forthright in speech or tone",
+    "choices": [
+      "Sweet and kind",
+      "Bitterly sharp",
+      "Highly acidic",
+      "Very old"
+    ],
+    "correctAnswer": "Bitterly sharp",
+    "category": "vocabulary"
+  },
+  {
+    "id": "18",
+    "word": "bombastic",
+    "definition": "High-sounding but with little meaning; inflated",
+    "choices": [
+      "Highly explosive",
+      "Pompous and inflated",
+      "Very quiet",
+      "Extremely precise"
+    ],
+    "correctAnswer": "Pompous and inflated",
+    "category": "vocabulary"
+  },
+  {
+    "id": "19",
+    "word": "cacophony",
+    "definition": "A harsh, discordant mixture of sounds",
+    "choices": [
+      "Beautiful harmony",
+      "Harsh noise",
+      "Complete silence",
+      "Rhythmic pattern"
+    ],
+    "correctAnswer": "Harsh noise",
+    "category": "vocabulary"
+  },
+  {
+    "id": "20",
+    "word": "dearth",
+    "definition": "A scarcity or lack of something",
+    "choices": [
+      "Great abundance",
+      "Noticeable lack",
+      "Small amount",
+      "Complete absence"
+    ],
+    "correctAnswer": "Noticeable lack",
+    "category": "vocabulary"
+  },
+  {
+    "id": "21",
+    "word": "ebullient",
+    "definition": "Full of energy and enthusiasm",
+    "choices": [
+      "Bubbling with joy",
+      "Very angry",
+      "Completely flat",
+      "Highly intelligent"
+    ],
+    "correctAnswer": "Bubbling with joy",
+    "category": "vocabulary"
+  },
+  {
+    "id": "22",
+    "word": "fastidious",
+    "definition": "Very attentive to and concerned about accuracy and detail",
+    "choices": [
+      "Extremely picky",
+      "Very fast",
+      "Highly intelligent",
+      "Physically strong"
+    ],
+    "correctAnswer": "Extremely picky",
+    "category": "vocabulary"
+  },
+  {
+    "id": "23",
+    "word": "garrulous",
+    "definition": "Excessively talkative, especially on trivial matters",
+    "choices": [
+      "Highly intelligent",
+      "Extremely talkative",
+      "Very quiet",
+      "Physically large"
+    ],
+    "correctAnswer": "Extremely talkative",
+    "category": "vocabulary"
+  },
+  {
+    "id": "24",
+    "word": "histrionic",
+    "definition": "Overly theatrical or melodramatic in character or style",
+    "choices": [
+      "Historically accurate",
+      "Dramatically exaggerated",
+      "Very quiet",
+      "Highly intelligent"
+    ],
+    "correctAnswer": "Dramatically exaggerated",
+    "category": "vocabulary"
+  },
+  {
+    "id": "25",
+    "word": "iconoclast",
+    "definition": "A person who attacks cherished beliefs or institutions",
+    "choices": [
+      "Religious leader",
+      "Traditionalist",
+      "Challenger of norms",
+      "Artist"
+    ],
+    "correctAnswer": "Challenger of norms",
+    "category": "vocabulary"
+  }
+]
