@@ -323,5 +323,330 @@
     ],
     "correctAnswer": "Challenger of norms",
     "category": "vocabulary"
+  },
+  {
+    "id": "26",
+    "word": "aberration",
+    "definition": "A departure from what is normal or expected",
+    "choices": [
+      "A natural event",
+      "A regular occurrence",
+      "A deviation from the norm",
+      "A legal matter"
+    ],
+    "correctAnswer": "A deviation from the norm",
+    "category": "vocabulary"
+  },
+  {
+    "id": "27",
+    "word": "belligerent",
+    "definition": "Hostile and aggressive",
+    "choices": [
+      "Friendly and calm",
+      "Aggressive and combative",
+      "Peaceful and loving",
+      "Timid and quiet"
+    ],
+    "correctAnswer": "Aggressive and combative",
+    "category": "vocabulary"
+  },
+  {
+    "id": "28",
+    "word": "cogent",
+    "definition": "Clear, logical, and convincing",
+    "choices": [
+      "Vague and unclear",
+      "Convincing and strong",
+      "Weak and indecisive",
+      "Confusing"
+    ],
+    "correctAnswer": "Convincing and strong",
+    "category": "vocabulary"
+  },
+  {
+    "id": "29",
+    "word": "denigrate",
+    "definition": "To criticize unfairly or belittle",
+    "choices": [
+      "To praise highly",
+      "To belittle or disparage",
+      "To forgive",
+      "To ignore"
+    ],
+    "correctAnswer": "To belittle or disparage",
+    "category": "vocabulary"
+  },
+  {
+    "id": "30",
+    "word": "epitome",
+    "definition": "A perfect example of a particular quality or type",
+    "choices": [
+      "An abstract concept",
+      "A unique event",
+      "A perfect example",
+      "A long-lasting process"
+    ],
+    "correctAnswer": "A perfect example",
+    "category": "vocabulary"
+  },
+  {
+    "id": "31",
+    "word": "flabbergasted",
+    "definition": "Extremely surprised or shocked",
+    "choices": [
+      "Calm and collected",
+      "Eager and excited",
+      "Completely shocked",
+      "Bored and uninterested"
+    ],
+    "correctAnswer": "Completely shocked",
+    "category": "vocabulary"
+  },
+  {
+    "id": "32",
+    "word": "gregarious",
+    "definition": "Fond of company; sociable",
+    "choices": [
+      "Introverted and shy",
+      "Sociable and outgoing",
+      "Aggressive and competitive",
+      "Timid and reserved"
+    ],
+    "correctAnswer": "Sociable and outgoing",
+    "category": "vocabulary"
+  },
+  {
+    "id": "33",
+    "word": "halcyon",
+    "definition": "Denoting a period of time in the past that was idyllically happy and peaceful",
+    "choices": [
+      "Chaotic and turbulent",
+      "Peaceful and calm",
+      "Uncertain and stressful",
+      "Frustrating and stressful"
+    ],
+    "correctAnswer": "Peaceful and calm",
+    "category": "vocabulary"
+  },
+  {
+    "id": "34",
+    "word": "inexorable",
+    "definition": "Impossible to stop or prevent",
+    "choices": [
+      "Changeable and reversible",
+      "Unstoppable and inevitable",
+      "Uncertain and unpredictable",
+      "Avoidable and controllable"
+    ],
+    "correctAnswer": "Unstoppable and inevitable",
+    "category": "vocabulary"
+  },
+  {
+    "id": "35",
+    "word": "juxtapose",
+    "definition": "To place different things side by side for comparison",
+    "choices": [
+      "To combine into one",
+      "To separate",
+      "To contrast or compare",
+      "To analyze thoroughly"
+    ],
+    "correctAnswer": "To contrast or compare",
+    "category": "vocabulary"
+  },
+  {
+    "id": "36",
+    "word": "kaleidoscope",
+    "definition": "A constantly changing pattern or sequence of elements",
+    "choices": [
+      "A stationary object",
+      "A rotating mirror",
+      "A fixed and unchanging view",
+      "A changing sequence of patterns"
+    ],
+    "correctAnswer": "A changing sequence of patterns",
+    "category": "vocabulary"
+  },
+  {
+    "id": "37",
+    "word": "laconic",
+    "definition": "Using few words; concise",
+    "choices": [
+      "Verbose and detailed",
+      "Brief and to the point",
+      "Wordy and elaborate",
+      "Charming and descriptive"
+    ],
+    "correctAnswer": "Brief and to the point",
+    "category": "vocabulary"
+  },
+  {
+    "id": "38",
+    "word": "mellifluous",
+    "definition": "Sweet or musical; pleasant to hear",
+    "choices": [
+      "Rough and harsh",
+      "Loud and disturbing",
+      "Soft and pleasant",
+      "Unpleasantly sharp"
+    ],
+    "correctAnswer": "Soft and pleasant",
+    "category": "vocabulary"
+  },
+  {
+    "id": "39",
+    "word": "nefarious",
+    "definition": "Wicked or criminal",
+    "choices": [
+      "Evil and immoral",
+      "Noble and honorable",
+      "Just and fair",
+      "Law-abiding"
+    ],
+    "correctAnswer": "Evil and immoral",
+    "category": "vocabulary"
+  },
+  {
+    "id": "40",
+    "word": "opulent",
+    "definition": "Luxurious and rich in appearance or quality",
+    "choices": [
+      "Simple and humble",
+      "Expensive and luxurious",
+      "Common and average",
+      "Pale and plain"
+    ],
+    "correctAnswer": "Expensive and luxurious",
+    "category": "vocabulary"
+  },
+  {
+    "id": "41",
+    "word": "perfunctory",
+    "definition": "Carried out with minimum effort or reflection",
+    "choices": [
+      "Thorough and careful",
+      "Superficial and routine",
+      "Creative and thoughtful",
+      "Detailed and elaborate"
+    ],
+    "correctAnswer": "Superficial and routine",
+    "category": "vocabulary"
+  },
+  {
+    "id": "42",
+    "word": "quixotic",
+    "definition": "Extremely idealistic; unrealistic and impractical",
+    "choices": [
+      "Realistic and achievable",
+      "Idealistic and impractical",
+      "Pessimistic and dull",
+      "Definite and calculable"
+    ],
+    "correctAnswer": "Idealistic and impractical",
+    "category": "vocabulary"
+  },
+  {
+    "id": "43",
+    "word": "recalcitrant",
+    "definition": "Having an obstinately uncooperative attitude toward authority or discipline",
+    "choices": [
+      "Obedient and cooperative",
+      "Stubbornly resistant",
+      "Willing to follow instructions",
+      "Energetic and eager"
+    ],
+    "correctAnswer": "Stubbornly resistant",
+    "category": "vocabulary"
+  },
+  {
+    "id": "44",
+    "word": "spurious",
+    "definition": "Not being what it purports to be; false or fake",
+    "choices": [
+      "Genuine and real",
+      "False and deceptive",
+      "Clear and transparent",
+      "Pure and untainted"
+    ],
+    "correctAnswer": "False and deceptive",
+    "category": "vocabulary"
+  },
+  {
+    "id": "45",
+    "word": "taciturn",
+    "definition": "Reserved or uncommunicative in speech; saying little",
+    "choices": [
+      "Extroverted and chatty",
+      "Quiet and reserved",
+      "Loud and expressive",
+      "Talkative and outgoing"
+    ],
+    "correctAnswer": "Quiet and reserved",
+    "category": "vocabulary"
+  },
+  {
+    "id": "46",
+    "word": "unfathomable",
+    "definition": "Impossible to comprehend or measure",
+    "choices": [
+      "Easily understandable",
+      "Immeasurable and incomprehensible",
+      "Clear and simple",
+      "Achievable"
+    ],
+    "correctAnswer": "Immeasurable and incomprehensible",
+    "category": "vocabulary"
+  },
+  {
+    "id": "47",
+    "word": "venerable",
+    "definition": "Respectable due to age, dignity, or character",
+    "choices": [
+      "Young and energetic",
+      "Old and respected",
+      "Eager and untested",
+      "Noble and divine"
+    ],
+    "correctAnswer": "Old and respected",
+    "category": "vocabulary"
+  },
+  {
+    "id": "48",
+    "word": "wistful",
+    "definition": "Longing or yearning for something, often with sadness",
+    "choices": [
+      "Content and happy",
+      "Nostalgic and yearning",
+      "Carefree and joyful",
+      "Indifferent and unconcerned"
+    ],
+    "correctAnswer": "Nostalgic and yearning",
+    "category": "vocabulary"
+  },
+  {
+    "id": "49",
+    "word": "xerophilous",
+    "definition": "Able to withstand dry conditions",
+    "choices": [
+      "Adapted to wet environments",
+      "Able to thrive in dry conditions",
+      "Prefers hot climates",
+      "Sensitive to heat"
+    ],
+    "correctAnswer": "Able to thrive in dry conditions",
+    "category": "vocabulary"
+  },
+  {
+    "id": "50",
+    "word": "zephyr",
+    "definition": "A gentle, mild breeze",
+    "choices": [
+      "Strong wind",
+      "Calm breeze",
+      "Cold gust",
+      "Hot air"
+    ],
+    "correctAnswer": "Calm breeze",
+    "category": "vocabulary"
   }
 ]

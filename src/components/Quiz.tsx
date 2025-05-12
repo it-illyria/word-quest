@@ -258,18 +258,14 @@ const Quiz: React.FC = () => {
     }
 
     return (
-        <div className="p-4 max-w-xl mx-auto">
+        <div className="quiz-container">
             {/* Header with mode toggle and streak */}
-            <div className="flex justify-between items-center mb-4">
+            <div className="quiz-header">
                 <StreakCounter currentStreak={mode === 'solo' ? currentStreak : 0} />
                 {!showResult && (
                     <button
                         onClick={() => mode === 'solo' ? setMode('battle') : quitBattle()}
-                        className={`px-4 py-2 rounded-full text-sm font-medium ${
-                            mode === 'solo'
-                                ? 'bg-purple-100 text-purple-800 hover:bg-purple-200'
-                                : 'bg-red-100 text-red-800 hover:bg-red-200'
-                        }`}
+                        className={`mode-toggle ${mode === 'solo' ? 'solo' : 'battle'}`}
                     >
                         {mode === 'solo' ? '⚔️ Battle Mode' : '❌ Leave Battle'}
                     </button>
@@ -290,25 +286,25 @@ const Quiz: React.FC = () => {
                 <>
                     {/* Timer */}
                     {!learnMode && !showResult && (
-                        <p className="text-right text-red-500 font-bold mb-2">⏱️ {timeLeft}s</p>
+                        <p className="quiz-timer">⏱️ {timeLeft}s</p>
                     )}
 
                     {/* Question counter */}
                     {!showResult && (
-                        <p className="text-sm text-gray-600 mb-2 text-right">
+                        <p className="question-counter">
                             Question {currentIndex + 1} of {questions.length}
                         </p>
                     )}
 
                     {/* Learn mode */}
                     {learnMode ? (
-                        <div className="text-center">
-                            <p className="text-xl font-semibold mb-4">
+                        <div className="learn-mode-container">
+                            <p className="learn-mode-title">
                                 Definition of "{currentQuestion.word}":
                             </p>
-                            <p className="text-lg mb-6">{currentQuestion.definition}</p>
+                            <p className="learn-mode-definition">{currentQuestion.definition}</p>
                             <button
-                                className="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg hover:bg-blue-700 transition"
+                                className="learn-mode-button"
                                 onClick={() => setLearnMode(false)}
                             >
                                 Start Quiz for "{currentQuestion.word}"
@@ -325,15 +321,15 @@ const Quiz: React.FC = () => {
                             <MistakeAnalysis weakCategories={weakCategories} />
 
                             {scoreHistory.length > 0 && (
-                                <div className="mt-6 p-4 bg-gray-100 rounded-lg">
-                                    <h3 className="font-bold mb-2">Recent Results:</h3>
-                                    <ul className="divide-y divide-gray-200">
+                                <div className="results-container">
+                                    <h3 className="results-title">Recent Results:</h3>
+                                    <ul className="results-list">
                                         {scoreHistory.map((result, i) => (
-                                            <li key={i} className="py-2">
-                                                <div className="flex justify-between">
+                                            <li key={i} className="results-item">
+                                                <div className="results-item-content">
                                                     <span>{result.date}</span>
-                                                    <span className={`font-semibold ${
-                                                        result.passed ? 'text-green-600' : 'text-red-600'
+                                                    <span className={`results-score ${
+                                                        result.passed ? 'passed' : 'failed'
                                                     }`}>
                                                         {result.score}/{result.total} ({Math.round((result.score/result.total)*100)}%)
                                                     </span>
@@ -354,7 +350,7 @@ const Quiz: React.FC = () => {
                                 onSelect={handleAnswer}
                             />
                             <button
-                                className="mt-4 text-blue-600 text-sm hover:text-blue-800"
+                                className="definition-button"
                                 onClick={() => setLearnMode(true)}
                             >
                                 Learn Mode: Show Definition
