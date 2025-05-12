@@ -19,9 +19,9 @@ const QuestionCard: React.FC<Props> = ({
     return (
         <motion.div
             className="question-card" // Using global CSS class
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.3}}
             key={word}
         >
             <h2 className="question-title">
@@ -52,17 +52,17 @@ const QuestionCard: React.FC<Props> = ({
                             onClick={() => onSelect(choice)}
                             disabled={isDisabled}
                             className={buttonClass}
-                            whileTap={{ scale: isDisabled ? 1 : 0.97 }}
+                            whileTap={{scale: isDisabled ? 1 : 0.97}}
                             whileHover={!isDisabled ? {
                                 scale: 1.02,
                                 boxShadow: "0 2px 8px rgba(30, 64, 175, 0.2)"
                             } : {}}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            transition={{type: "spring", stiffness: 400, damping: 10}}
                         >
                             <motion.span
-                                initial={{ x: -5, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                transition={{ delay: index * 0.05 }}
+                                initial={{x: -5, opacity: 0}}
+                                animate={{x: 0, opacity: 1}}
+                                transition={{delay: index * 0.05}}
                             >
                                 {choice}
                             </motion.span>

@@ -15,14 +15,15 @@ type QuizMode = 'solo' | 'battle';
 
 const Quiz: React.FC = () => {
     // Core quiz states
-    const [questions, setQuestions] = useState<Question[]>([]);
+    const [allQuestions, setAllQuestions] = useState<Question[]>([]);
+    const [currentQuestions, setCurrentQuestions] = useState<Question[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selected, setSelected] = useState<string | null>(null);
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [learnMode, setLearnMode] = useState(false);
     const [passed, setPassed] = useState(false);
-    const [timeLeft, setTimeLeft] = useState(10);
+    const [timeLeft, setTimeLeft] = useState(3);
     const [incorrectAnswers, setIncorrectAnswers] = useState<string[]>([]);
 
     // New feature states
@@ -42,7 +43,17 @@ const Quiz: React.FC = () => {
 
     // Memoized values
     const userId = useMemo(() => localStorage.getItem('userId') || uuidv4(), []);
-    const currentQuestion = useMemo(() => questions[currentIndex], [questions, currentIndex]);
+    const currentQuestion = useMemo(() => currentQuestions[currentIndex], [currentQuestions, currentIndex]);
+
+    // Helper function to shuffle array (Fisher-Yates algorithm)
+    const shuffleArray = useCallback((array: any[]) => {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
+    }, []);
 
     // Initialize socket connection
     useEffect(() => {
@@ -55,7 +66,8 @@ const Quiz: React.FC = () => {
 
             newSocket.on('battle-start', (data: BattleState) => {
                 setBattleState(data);
-                setQuestions(data.questions);
+                setAllQuestions(data.questions);
+                setCurrentQuestions(shuffleArray(data.questions).slice(0, 10)); // Get a random set for the battle
                 playBattleStart();
             });
 
@@ -74,28 +86,30 @@ const Quiz: React.FC = () => {
             setSocket(newSocket);
             return setupSocket(newSocket);
         }
-    }, [playBattleStart]);
+    }, [playBattleStart, shuffleArray]);
 
-    // Load saved data
+    // Load all questions on component mount
     useEffect(() => {
-        const loadData = async () => {
-            const questions = await fetchQuestions();
-            setQuestions(questions);
-
-            const savedHistory = localStorage.getItem('quizScoreHistory');
-            if (savedHistory) setScoreHistory(JSON.parse(savedHistory));
-
-            const streak = localStorage.getItem('quizStreak');
-            if (streak) setCurrentStreak(parseInt(streak));
-
-            localStorage.setItem('userId', userId);
+        const loadQuestions = async () => {
+            const fetchedQuestions = await fetchQuestions();
+            setAllQuestions(fetchedQuestions);
+            // Initialize with a random subset for the first solo quiz
+            setCurrentQuestions(shuffleArray(fetchedQuestions).slice(0, 10));
         };
 
-        loadData();
-    }, [userId]);
+        loadQuestions();
+
+        const savedHistory = localStorage.getItem('quizScoreHistory');
+        if (savedHistory) setScoreHistory(JSON.parse(savedHistory));
+
+        const streak = localStorage.getItem('quizStreak');
+        if (streak) setCurrentStreak(parseInt(streak));
+
+        localStorage.setItem('userId', userId);
+    }, [userId, shuffleArray]);
 
     // Reset timer function
-    const resetTimer = useCallback(() => setTimeLeft(10), []);
+    const resetTimer = useCallback(() => setTimeLeft(3), []);
 
     // Streak management
     const updateStreak = useCallback(() => {
@@ -144,8 +158,8 @@ const Quiz: React.FC = () => {
         if (mode === 'battle' && battleState?.status !== 'in-progress') return;
 
         setSelected(choice);
-        const questionId = questions[currentIndex].id;
-        const isCorrect = choice === questions[currentIndex].correctAnswer;
+        const questionId = currentQuestions[currentIndex].id;
+        const isCorrect = choice === currentQuestions[currentIndex].correctAnswer;
 
         if (isCorrect) {
             setScore(prev => prev + 1);
@@ -166,22 +180,22 @@ const Quiz: React.FC = () => {
         }
 
         setTimeout(() => {
-            if (currentIndex + 1 < questions.length) {
+            if (currentIndex + 1 < currentQuestions.length) {
                 setCurrentIndex(currentIndex + 1);
                 setSelected(null);
                 resetTimer();
             } else {
-                const didPass = (score + (isCorrect ? 1 : 0)) / questions.length >= 0.7;
+                const didPass = (score + (isCorrect ? 1 : 0)) / currentQuestions.length >= 0.7;
                 setPassed(didPass);
                 setShowResult(true);
 
                 if (mode === 'solo') {
                     updateStreak();
-                    analyzePerformance(questions, [...incorrectAnswers, ...(isCorrect ? [] : [questionId])]);
+                    analyzePerformance(currentQuestions, [...incorrectAnswers, ...(isCorrect ? [] : [questionId])]);
                     saveResultToHistory({
                         date: new Date().toLocaleString(),
                         score: score + (isCorrect ? 1 : 0),
-                        total: questions.length,
+                        total: currentQuestions.length,
                         passed: didPass
                     });
                 }
@@ -192,7 +206,7 @@ const Quiz: React.FC = () => {
     }, [
         mode,
         battleState,
-        questions,
+        currentQuestions,
         currentIndex,
         playCorrect,
         playWrong,
@@ -230,12 +244,10 @@ const Quiz: React.FC = () => {
         setLearnMode(false);
         setPassed(false);
         setIncorrectAnswers([]);
+        // Get a new random set of questions for the next quiz
+        setCurrentQuestions(shuffleArray(allQuestions).slice(0, 10));
         resetTimer();
-
-        if (mode === 'solo') {
-            fetchQuestions().then(setQuestions);
-        }
-    }, [mode, resetTimer]);
+    }, [allQuestions, shuffleArray, resetTimer]);
 
     // Battle mode functions
     const startBattle = useCallback((opponentId: string) => {
@@ -253,7 +265,7 @@ const Quiz: React.FC = () => {
         handleRestart();
     }, [socket, battleState, handleRestart]);
 
-    if (questions.length === 0) {
+    if (currentQuestions.length === 0) {
         return <div className="text-center mt-10 text-lg">Loading...</div>;
     }
 
@@ -292,7 +304,7 @@ const Quiz: React.FC = () => {
                     {/* Question counter */}
                     {!showResult && (
                         <p className="question-counter">
-                            Question {currentIndex + 1} of {questions.length}
+                            Question {currentIndex + 1} of {currentQuestions.length}
                         </p>
                     )}
 
@@ -314,7 +326,7 @@ const Quiz: React.FC = () => {
                         <div>
                             <Result
                                 score={score}
-                                total={questions.length}
+                                total={currentQuestions.length}
                                 passed={passed}
                                 onRestart={handleRestart}
                             />
@@ -344,7 +356,7 @@ const Quiz: React.FC = () => {
                         <>
                             <QuestionCard
                                 word={currentQuestion.word}
-                                choices={currentQuestion.choices}
+                                choices={shuffleArray(currentQuestion.choices)}
                                 correctAnswer={currentQuestion.correctAnswer}
                                 selected={selected}
                                 onSelect={handleAnswer}
