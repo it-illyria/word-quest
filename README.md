@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 🧠 WordQuest - Vocabulary Quiz App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**WordQuest** is a React-based vocabulary quiz application that helps users improve their word knowledge through engaging solo and real-time battle modes. It features a smooth UI with animations, live performance tracking, and a responsive design.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🎮 **Solo & Battle Modes**: Practice on your own or compete with others in real-time.
+- ✨ **Smooth Animations**: Framer Motion-enhanced transitions for an interactive experience.
+- 📊 **Results Tracking**: View past quiz scores and performance stats.
+- 📈 **Performance Analysis**: Get insights into your strengths and weaknesses.
+- 🔥 **Streak System**: Keep your learning streak alive!
+- 💡 **Responsive UI**: Fully functional across desktops and mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Socket.IO (for multiplayer)
+- LocalStorage (for saving results)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/it-illyria/word-quest.git
+cd word-quest
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies:**
+``` bash
+ npm install
+```
 
-### `npm run eject`
+3. **Start the development server:**
+```bash
+ npm run start
+```
+>The app will be available at http://localhost:3000 (or whatever React outputs).
+---
+## 🔧 Folder Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```json
+src/
+├── components/        # UI components like Quiz, QuestionCard, ResultPanel
+├   ├── animations/
+├   ├   ├──index.ts
+├   ├   ├──MotionCombined.tsx
+├   ├   ├──MotionFade.tsx
+├   ├   ├──MotionScale.tsx
+├   ├── BattleLobby.tsx
+├   ├── MistakeAnalysis.tsx
+├   ├── QuestionCard.tsx
+├   ├── Quiz.tsx
+├   ├── Result.tsx
+├   ├── StreakCounter.tsx
+├   ├── Welcome.tsx
+├── components/        # Fake Backend
+├   ├── questions.json
+├── Services/        # Project Services
+├   ├── animations.ts
+├   ├── mockApi.ts
+├   ├── mockSocket.ts
+├   ├── quiz-service.ts
+├   ├── type.ts
+├── assets/            # Static assets like images, icons
+├── .env.development/            # Environmnet config
+├── App.js            # Root component
+└── index.js           # Entry point
+└── index.css           # Styling of the project
+```
+---
+## ✅ Todo / Improvements
+- [ ] Add user authentication
+- [ ] Deploy to production
+- [ ] Add sound effects
+- [ ] Leaderboards for battle mode
+- [ ] Expand a vocabulary set
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
+## 👤 Author
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️ by **Simi Lika**
