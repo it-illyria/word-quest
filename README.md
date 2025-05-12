@@ -89,3 +89,10 @@ src/
 ## 👤 Author
 
 Made with ❤️ by **Simi Lika**
+---
+## 📄 License
+This project is licensed under the MIT License.
+```yaml
+---
+Would you like me to create a version that includes badges (like GitHub stars, license, etc.) or deployment instructions for Vercel/Netlify?
+```
