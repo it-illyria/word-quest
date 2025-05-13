@@ -1,22 +1,37 @@
 import React, { useState } from "react";
+import HomePage from "./components/HomePage";
 import WelcomeScreen from "./components/Welcome";
 import Difficulty from "./components/Difficulty";
 import Quiz from "./components/Quiz";
+import TicTacToe from "./components/TicTacToe";
 import './index.css';
 
 function App() {
-    const [currentView, setCurrentView] = useState('welcome');
+    const [currentView, setCurrentView] = useState('home');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedDifficulty, setSelectedDifficulty] = useState('normal');
 
     return (
-        <div className="font-sans">
+        <div className="app-container">
+            {currentView === 'home' && (
+                <HomePage
+                    onNavigateToQuiz={() => setCurrentView('welcome')}
+                    onNavigateToTicTacToe={() => setCurrentView('tictactoe')}
+                />
+            )}
+
             {currentView === 'welcome' && (
                 <WelcomeScreen
                     onCategorySelect={(category) => {
                         setSelectedCategory(category);
-                        setCurrentView('difficulty');
+                        if (category === "Vocabulary") {
+                            setSelectedDifficulty('normal');
+                            setCurrentView('quiz');
+                        } else {
+                            setCurrentView('difficulty');
+                        }
                     }}
+                    onBack={() => setCurrentView('home')}
                 />
             )}
 
@@ -37,6 +52,10 @@ function App() {
                     difficulty={selectedDifficulty}
                     onExit={() => setCurrentView('welcome')}
                 />
+            )}
+
+            {currentView === 'tictactoe' && (
+                <TicTacToe onBack={() => setCurrentView('home')} />
             )}
         </div>
     );

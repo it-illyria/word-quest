@@ -4,7 +4,8 @@ import "../index.css";
 import useSound from "use-sound";
 
 interface Props {
-    onCategorySelect?: (category: string, difficulty?: string) => void;
+    onCategorySelect: (category: string) => void;
+    onBack: () => void;
 }
 
 const quizCategories = [
@@ -21,13 +22,13 @@ const quizCategories = [
     },
 ];
 
-const WelcomeScreen: React.FC<Props> = ({ onCategorySelect }) => {
+const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack }) => {
     const [playHover] = useSound('/sounds/hover.mp3');
+    const [playSelect] = useSound('/sounds/select.mp3');
 
     const handleCategorySelect = (category: string) => {
-        if (onCategorySelect) {
-            onCategorySelect(category); // Treat Vocabulary like other categories
-        }
+        playSelect();
+        onCategorySelect(category);
     };
 
     return (
@@ -37,6 +38,19 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect }) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
         >
+            {/* Back Button */}
+            <motion.button
+                className="back-button"
+                onClick={onBack}
+                whileHover={{ scale: 1.05 }}
+                onHoverStart={() => playHover()}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+            >
+                ← Back to Home
+            </motion.button>
+
             <motion.div
                 className="welcome-content"
                 initial={{ y: -40, scale: 0.95 }}
@@ -90,7 +104,7 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect }) => {
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.4 + i * 0.1 }}
-                            whileHover={{ scale: category.special ? 1 : 1.05 }}
+                            whileHover={{ scale: category.special ? 1.05 : 1.03 }}
                             onHoverStart={() => playHover()}
                             onClick={() => handleCategorySelect(category.name)}
                         >

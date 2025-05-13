@@ -5,6 +5,8 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #00f2fe;
 }
 
 code {
@@ -19,11 +21,15 @@ code {
 }
 
 @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }
 
-/* Your other styles for WelcomeScreen.css and dark mode remain the same */
+/* Welcome Screen Styles */
 .welcome-container {
     min-height: 100vh;
     display: flex;
@@ -115,8 +121,7 @@ code {
     transform: translateY(-5px);
 }
 
-
-/* QuestionCard.module.css */
+/* If these are only for QuestionCard, consider moving to QuestionCard.module.css */
 .container {
     padding: 1rem;
     border-radius: 0.75rem;
@@ -231,9 +236,10 @@ code {
 }
 
 .restart-button {
+    /* Apply base button styles */
     padding: 0.75rem 2rem;
-    border-radius: 0.75rem;
-    font-size: 1.125rem;
+    border-radius: 0.5rem; /* Standardize with base button */
+    font-size: 1rem; /* Standardize with base button */
     font-weight: 600;
     transition: all 0.2s;
     border: none;
@@ -299,7 +305,7 @@ code {
 .mistake-analysis {
     background-color: #eff6ff;
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; /* Consider standardizing */
     margin-top: 1.5rem;
 }
 
@@ -351,12 +357,6 @@ code {
     color: #1d4ed8;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-    .resource-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 /* Quiz Component Styles */
 .quiz-container {
@@ -373,6 +373,7 @@ code {
 }
 
 .mode-toggle {
+    /* Apply base button styles */
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     font-size: 0.875rem;
@@ -383,6 +384,7 @@ code {
 }
 
 .solo-mode {
+    composes: mode-toggle; /* Inherit base styles */
     background-color: #f5f3ff;
     color: #5b21b6;
 }
@@ -392,6 +394,7 @@ code {
 }
 
 .battle-mode {
+    composes: mode-toggle; /* Inherit base styles */
     background-color: #fee2e2;
     color: #b91c1c;
 }
@@ -437,14 +440,15 @@ code {
 }
 
 .learn-mode-button {
-    background-color: #2563eb;
-    color: white;
+    /* Apply base button styles */
     padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-size: 1.125rem;
+    border-radius: 0.5rem; /* Standardize */
+    font-size: 1rem; /* Standardize */
     cursor: pointer;
     transition: background-color 0.2s;
     border: none;
+    background-color: #2563eb;
+    color: white;
 }
 
 .learn-mode-button:hover {
@@ -456,7 +460,7 @@ code {
     margin-top: 1.5rem;
     padding: 1rem;
     background-color: #f3f4f6;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; /* Consistent with mistake analysis */
 }
 
 .history-title {
@@ -821,12 +825,15 @@ code {
     background-color: #1f2937; /* dark slate background */
     color: #ffffff; /* white text */
 }
+
 .results-title {
     color: #ffffff;
 }
+
 .results-score.passed {
     color: #4ade80; /* green-400 */
 }
+
 .results-score.failed {
     color: #f87171; /* red-400 */
 }
@@ -972,10 +979,6 @@ code {
 }
 
 
-
-
-
-
 /* index.css */
 
 /* Import any global styles or reset you might have */
@@ -1118,9 +1121,6 @@ canvas {
     }
 }
 
-
-
-
 .category-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1173,7 +1173,6 @@ canvas {
         grid-template-columns: 1fr;
     }
 }
-
 
 
 /* Difficulty Selection Styles */
@@ -1306,6 +1305,544 @@ canvas {
         padding: 12px;
     }
 }
+
+/* styles.css */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.game-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-card {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+}
+
+.tictactoe-card {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.game-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Tic Tac Toe Styles */
+/* Tic Tac Toe Styles - Consolidated and Optimized */
+.tictactoe-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #3a5a80;
+    transform: translateY(-2px);
+}
+
+.game-title {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.player-profile-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.player-avatar {
+    font-size: 2rem;
+    margin-right: 1rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.player-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.player-stats span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.game-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.difficulty-selector,
+.theme-selector,
+.game-mode-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.difficulty-selector label,
+.theme-selector label,
+.game-mode-selector label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.difficulty-selector select,
+.theme-selector select,
+.game-mode-selector select {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.difficulty-selector select:hover,
+.theme-selector select:hover,
+.game-mode-selector select:hover {
+    border-color: #bbb;
+}
+
+.tournament-info {
+    background: #4a6fa5;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tournament-round {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tournament-progress {
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.game-info {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.current-turn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.score-display {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.score-you {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.score-computer {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.score-draw {
+    color: #777;
+    font-weight: bold;
+}
+
+.extended-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.square {
+    aspect-ratio: 1;
+    height: 100px;
+    font-size: 3rem;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.square:hover:not(:disabled) {
+    background: #f5f5f5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-color: #bbb;
+}
+
+.square:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.filled-x {
+    color: #4CAF50;
+}
+
+.filled-o {
+    color: #f44336;
+}
+
+.game-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.action-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.reset-button {
+    background: #4CAF50;
+    color: white;
+}
+
+.reset-button:hover {
+    background: #3d8b40;
+    transform: translateY(-2px);
+}
+
+.stats-button {
+    background: #2196F3;
+    color: white;
+}
+
+.stats-button:hover {
+    background: #0b7dda;
+    transform: translateY(-2px);
+}
+
+.tournament-button {
+    background: #FF9800;
+    color: white;
+}
+
+.tournament-button:hover {
+    background: #e68a00;
+    transform: translateY(-2px);
+}
+
+.history-panel {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.history-panel h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.history-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+    color: white;
+}
+
+.history-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.history-info span {
+    font-size: 0.9rem;
+}
+
+.result-X {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.result-O {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.result-draw {
+    color: #777;
+    font-weight: bold;
+}
+
+.mini-board-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    width: 80px;
+    margin-top: 0.5rem;
+}
+
+.mini-cell {
+    aspect-ratio: 1;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    color: white;
+}
+
+.replay-button {
+    padding: 0.5rem 1rem;
+    background: #FFC107;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.replay-button:hover:not(:disabled) {
+    background: #e6ac00;
+    transform: translateY(-2px);
+}
+
+.replay-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Ultimate 9x9 Board */
+.ultimate-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.small-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 5px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.ultimate-board .square {
+    height: 40px;
+    font-size: 1.2rem;
+    margin: 1px;
+}
+
+/* 5-in-a-row Board */
+.five-in-row-board {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 2px;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.five-in-row-board .square {
+    height: 30px;
+    font-size: 1rem;
+}
+
+/* Classic Board */
+.classic-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.classic-board .square {
+    height: 100px;
+    font-size: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tictactoe-container {
+        padding: 1rem;
+    }
+
+    .game-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .board {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .square {
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .game-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 /*------------------------------------------------ Dark Mode  ------------------------------------------------*/
 @media (prefers-color-scheme: dark) {
     .welcome-container {
@@ -1587,3 +2124,10 @@ canvas {
         background-color: #dc2626;
     }
 }
+
+@media (min-width: 768px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
