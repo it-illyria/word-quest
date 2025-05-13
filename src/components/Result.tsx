@@ -8,9 +8,10 @@ type Props = {
     total: number;
     passed: boolean;
     onRestart: () => void;
+    onNewQuestions?: () => void;
 };
 
-const Result: React.FC<Props> = ({ score, total, passed, onRestart }) => {
+const Result: React.FC<Props> = ({ score, total, passed, onRestart, onNewQuestions }) => {
     const { width, height } = useWindowSize();
     const percentage = Math.round((score / total) * 100);
 
@@ -45,14 +46,27 @@ const Result: React.FC<Props> = ({ score, total, passed, onRestart }) => {
                 </p>
             </motion.div>
 
-            <motion.button
-                onClick={onRestart}
-                className={`restart-button ${passed ? "button-passed" : "button-failed"}`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-            >
-                {passed ? "Try Another Quiz" : "Retry This Quiz"}
-            </motion.button>
+            <div className="result-buttons">
+                <motion.button
+                    onClick={onRestart}
+                    className={`restart-button ${passed ? "button-passed" : "button-failed"}`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    {passed ? "Try Another Quiz" : "Retry This Quiz"}
+                </motion.button>
+
+                {onNewQuestions && (
+                    <motion.button
+                        onClick={onNewQuestions}
+                        className="new-questions-button"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        Get New Questions
+                    </motion.button>
+                )}
+            </div>
         </motion.div>
     );
 };

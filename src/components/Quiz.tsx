@@ -10,6 +10,8 @@ import {Question, QuizResult, BattleState} from '../services/type';
 import {mockSocket} from '../services/mockSocket';
 import {fetchQuestions} from '../services/mockApi';
 import Socket = SocketIOClient.Socket;
+import { normalizeCategory } from '../utils/categories';
+import { getQuestions } from '../services/question-loader';
 
 type QuizMode = 'solo' | 'battle';
 
@@ -30,6 +32,7 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
     const [passed, setPassed] = useState(false);
     const [timeLeft, setTimeLeft] = useState(10);
     const [incorrectAnswers, setIncorrectAnswers] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [mode, setMode] = useState<QuizMode>('solo');
     const [socket, setSocket] = useState<Socket | null>(null);
@@ -47,15 +50,6 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
     const userId = useMemo(() => localStorage.getItem('userId') || uuidv4(), []);
     const currentQuestion = useMemo(() => currentQuestions[currentIndex], [currentQuestions, currentIndex]);
 
-    const shuffleArray = useCallback((array: any[]) => {
-        const newArray = [...array];
-        for (let i = newArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-        }
-        return newArray;
-    }, []);
-
     const prepareQuestionsWithRandomizedChoices = useCallback((questions: Question[]): Question[] => {
         return questions.map(q => {
             const incorrect = q.choices.filter(c => c !== q.correctAnswer);
@@ -65,6 +59,26 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
             return {...q, choices: randomizedChoices};
         });
     }, []);
+
+    const getInitialQuestions = useCallback((questions: Question[], count: number = 10): Question[] => {
+        return prepareQuestionsWithRandomizedChoices(questions.slice(0, count));
+    }, [prepareQuestionsWithRandomizedChoices]);
+
+    const resetTimer = useCallback(() => {
+        switch (difficulty) {
+            case 'easy':
+                setTimeLeft(15);
+                break;
+            case 'normal':
+                setTimeLeft(10);
+                break;
+            case 'hard':
+                setTimeLeft(7);
+                break;
+            default:
+                setTimeLeft(10);
+        }
+    }, [difficulty]);
 
     useEffect(() => {
         const useMockSocket = process.env.REACT_APP_USE_MOCK_SOCKET === 'true';
@@ -76,8 +90,11 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
 
             newSocket.on('battle-start', (data: BattleState) => {
                 setBattleState(data);
-                setAllQuestions(data.questions);
-                setCurrentQuestions(prepareQuestionsWithRandomizedChoices(data.questions).slice(0, 10));
+                const battleQuestions = category
+                    ? data.questions.filter(q => q.category === category)
+                    : data.questions;
+                setAllQuestions(battleQuestions);
+                setCurrentQuestions(getInitialQuestions(battleQuestions));
                 playBattleStart();
             });
 
@@ -96,43 +113,94 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
             setSocket(newSocket);
             return setupSocket(newSocket);
         }
-    }, [playBattleStart, prepareQuestionsWithRandomizedChoices]);
+    }, [playBattleStart, getInitialQuestions, category]);
 
     useEffect(() => {
         const loadQuestions = async () => {
-            const fetchedQuestions = await fetchQuestions();
-            setAllQuestions(fetchedQuestions);
-            setCurrentQuestions(prepareQuestionsWithRandomizedChoices(shuffleArray(fetchedQuestions).slice(0, 10)));
+            try {
+                setIsLoading(true);
+                console.log(`Loading questions for category: ${category}`);
+
+                // Normalize the category if provided
+                const normalizedCategory = category ? normalizeCategory(category) : undefined;
+                const fetchedQuestions = await fetchQuestions(normalizedCategory);
+
+                // Debug logs with proper typing
+                console.log('Fetched questions count:', fetchedQuestions.length);
+                console.log('All available categories:',
+                    [...new Set(getQuestions().map((q: Question) => q.category))]
+                );
+
+                if (fetchedQuestions.length === 0) {
+                    if (category) {
+                        console.warn(`No questions found for category: "${category}" (normalized: "${normalizedCategory}")`);
+                    } else {
+                        console.warn('No questions found (no category filter applied)');
+                    }
+                }
+
+                // Prepare questions with randomized choices
+                const preparedQuestions = prepareQuestionsWithRandomizedChoices(fetchedQuestions);
+
+                setAllQuestions(preparedQuestions);
+                setCurrentQuestions(getInitialQuestions(preparedQuestions));
+
+                // Reset quiz state
+                setCurrentIndex(0);
+                setScore(0);
+                setSelected(null);
+                setShowResult(false);
+                setLearnMode(false);
+                setPassed(false);
+                setIncorrectAnswers([]);
+                resetTimer();
+
+            } catch (error) {
+                console.error('Error loading questions:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        const loadUserData = () => {
+            const savedHistory = localStorage.getItem('quizScoreHistory');
+            if (savedHistory) {
+                try {
+                    setScoreHistory(JSON.parse(savedHistory));
+                } catch (e) {
+                    console.error('Error parsing score history:', e);
+                }
+            }
+            const streak = localStorage.getItem('quizStreak');
+            if (streak) {
+                setCurrentStreak(parseInt(streak));
+            }
+
+            if (!localStorage.getItem('userId')) {
+                localStorage.setItem('userId', userId);
+            }
         };
 
         loadQuestions();
+        loadUserData();
 
-        const savedHistory = localStorage.getItem('quizScoreHistory');
-        if (savedHistory) setScoreHistory(JSON.parse(savedHistory));
+        return () => {
+            if (socket) {
+                socket.disconnect();
+            }
+        };
+    }, [
+        userId,
+        category,
+        difficulty,
+        prepareQuestionsWithRandomizedChoices,
+        getInitialQuestions,
+        resetTimer,
+        socket
+    ]);
 
-        const streak = localStorage.getItem('quizStreak');
-        if (streak) setCurrentStreak(parseInt(streak));
-
-        localStorage.setItem('userId', userId);
-    }, [userId, shuffleArray, prepareQuestionsWithRandomizedChoices]);
 
     useEffect(() => {
-        switch (difficulty) {
-            case 'easy':
-                setTimeLeft(15);
-                break;
-            case 'normal':
-                setTimeLeft(10);
-                break;
-            case 'hard':
-                setTimeLeft(7);
-                break;
-            default:
-                setTimeLeft(10);
-        }
-    }, [difficulty]);
-
-    const resetTimer = useCallback(() => {
         switch (difficulty) {
             case 'easy':
                 setTimeLeft(15);
@@ -274,18 +342,47 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
         setLearnMode(false);
         setPassed(false);
         setIncorrectAnswers([]);
-        setCurrentQuestions(prepareQuestionsWithRandomizedChoices(shuffleArray(allQuestions).slice(0, 10)));
+        setCurrentQuestions(prepareQuestionsWithRandomizedChoices(currentQuestions));
         resetTimer();
-    }, [allQuestions, shuffleArray, prepareQuestionsWithRandomizedChoices, resetTimer]);
+    }, [currentQuestions, prepareQuestionsWithRandomizedChoices, resetTimer]);
+
+    const getNewQuestions = useCallback(() => {
+        if (allQuestions.length === 0) return;
+
+        const nextIndex = currentQuestions.length;
+        const newQuestions = allQuestions.slice(nextIndex, nextIndex + 10);
+
+        if (newQuestions.length > 0) {
+            setCurrentQuestions(prepareQuestionsWithRandomizedChoices(newQuestions));
+            setScore(0);
+            setCurrentIndex(0);
+            setSelected(null);
+            setShowResult(false);
+            setLearnMode(false);
+            setPassed(false);
+            setIncorrectAnswers([]);
+            resetTimer();
+        } else {
+            setCurrentQuestions(prepareQuestionsWithRandomizedChoices(allQuestions.slice(0, 10)));
+            setScore(0);
+            setCurrentIndex(0);
+            setSelected(null);
+            setShowResult(false);
+            setLearnMode(false);
+            setPassed(false);
+            setIncorrectAnswers([]);
+            resetTimer();
+        }
+    }, [allQuestions, currentQuestions.length, prepareQuestionsWithRandomizedChoices, resetTimer]);
 
     const startBattle = useCallback((opponentId: string) => {
         socket?.emit('start-battle', {
             userId,
             opponentId,
-            category: 'vocabulary',
+            category: category || 'general',
             difficulty
         });
-    }, [socket, userId, difficulty]);
+    }, [socket, userId, category, difficulty]);
 
     const quitBattle = useCallback(() => {
         socket?.emit('quit-battle', {battleId: battleState?.battleId});
@@ -294,8 +391,22 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
         handleRestart();
     }, [socket, battleState, handleRestart]);
 
+    if (isLoading) {
+        return <div className="text-center mt-10 text-lg">Loading questions...</div>;
+    }
+
     if (currentQuestions.length === 0) {
-        return <div className="text-center mt-10 text-lg">Loading...</div>;
+        return (
+            <div className="text-center mt-10">
+                <p className="text-lg">No questions available for the selected category.</p>
+                <button
+                    className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+                    onClick={onExit}
+                >
+                    Go Back
+                </button>
+            </div>
+        );
     }
 
     return (
@@ -336,14 +447,16 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
                     {learnMode ? (
                         <div className="learn-mode-container">
                             <p className="learn-mode-title">
-                                Definition of "{currentQuestion.word}":
+                                {currentQuestion.word ? `Definition of "${currentQuestion.word}":` : 'Question Details:'}
                             </p>
-                            <p className="learn-mode-definition">{currentQuestion.definition}</p>
+                            <p className="learn-mode-definition">
+                                {currentQuestion.definition || currentQuestion.correctAnswer}
+                            </p>
                             <button
                                 className="learn-mode-button"
                                 onClick={() => setLearnMode(false)}
                             >
-                                Start Quiz for "{currentQuestion.word}"
+                                {currentQuestion.word ? `Start Quiz for "${currentQuestion.word}"` : 'Continue Quiz'}
                             </button>
                         </div>
                     ) : showResult ? (
@@ -353,6 +466,7 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
                                 total={currentQuestions.length}
                                 passed={passed}
                                 onRestart={handleRestart}
+                                onNewQuestions={getNewQuestions}
                             />
                             <MistakeAnalysis weakCategories={weakCategories}/>
                             {scoreHistory.length > 0 && (
@@ -379,18 +493,21 @@ const Quiz: React.FC<QuizProps> = ({ category, difficulty, onExit }) => {
                     ) : (
                         <>
                             <QuestionCard
-                                word={currentQuestion.word}
+                                word={currentQuestion.word || ''}
+                                question={currentQuestion.question || ''}
                                 choices={currentQuestion.choices}
                                 correctAnswer={currentQuestion.correctAnswer}
                                 selected={selected}
                                 onSelect={handleAnswer}
                             />
-                            <button
-                                className="definition-button"
-                                onClick={() => setLearnMode(true)}
-                            >
-                                Learn Mode: Show Definition
-                            </button>
+                            {(currentQuestion.word && currentQuestion.definition) && (
+                                <button
+                                    className="definition-button"
+                                    onClick={() => setLearnMode(true)}
+                                >
+                                    Learn Mode: Show Definition
+                                </button>
+                            )}
                         </>
                     )}
                 </>

@@ -68,14 +68,15 @@ const BattleLobby: React.FC<BattleLobbyProps> = ({
           </span>
                 </div>
 
-                <QuestionCard
-                    word={currentQuestion.word}
-                    choices={currentQuestion.choices}
-                    correctAnswer={currentQuestion.correctAnswer}
-                    selected={selected || null}
-                    onSelect={onAnswer || (() => {
-                    })}
-                />
+                {currentQuestion.word && currentQuestion.choices && currentQuestion.correctAnswer && (
+                    <QuestionCard
+                        word={currentQuestion.word}
+                        choices={currentQuestion.choices}
+                        correctAnswer={currentQuestion.correctAnswer}
+                        selected={selected || null}
+                        onSelect={onAnswer || (() => {})}
+                    />
+                )}
             </div>
         );
     }

@@ -1,7 +1,27 @@
-export interface Question {
+export type Question =
+    | {
     id: string;
     word: string;
     definition: string;
+    choices: string[];
+    correctAnswer: string;
+    category: string;
+    question?: undefined;
+}
+    | {
+    id: string;
+    question: string;
+    choices: string[];
+    correctAnswer: string;
+    category: string;
+    word?: undefined;
+    definition?: undefined;
+};
+
+
+export interface DisplayQuestion {
+    id: string;
+    prompt: string;
     choices: string[];
     correctAnswer: string;
     category: string;

@@ -2,7 +2,8 @@ import React from "react";
 import {motion} from "framer-motion";
 
 interface Props {
-    word: string;
+    word?: string;
+    question?: string;
     choices: string[];
     correctAnswer: string;
     selected: string | null;
@@ -11,22 +12,23 @@ interface Props {
 
 const QuestionCard: React.FC<Props> = ({
                                            word,
+                                           question,
                                            choices,
                                            correctAnswer,
                                            selected,
                                            onSelect,
                                        }) => {
+    const prompt = word ? `What does "<span class="word-highlight">${word}</span>" mean?` : question;
+
     return (
         <motion.div
             className="question-card"
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.3}}
-            key={word}
+            key={word || question}
         >
-            <h2 className="question-title">
-                What does "<span className="word-highlight">{word}</span>" mean?
-            </h2>
+            <h2 className="question-title" dangerouslySetInnerHTML={{ __html: prompt || '' }} />
 
             <div className="choices-grid">
                 {choices.map((choice, index) => {

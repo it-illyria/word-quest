@@ -1,16 +1,21 @@
 import { Question } from './type';
-
-const questions: Question[] = require('../data/questions.json');
+import { getQuestions } from './question-loader';
 
 export const fetchQuestions = async (category?: string): Promise<Question[]> => {
-    return new Promise(resolve => {
-        let filteredQuestions = questions;
+    return new Promise((resolve) => {
+        let questions = getQuestions();
+
         if (category) {
-            filteredQuestions = filteredQuestions.filter(q => q.category === category);
+            const normalizedCategory = category.toLowerCase().trim();
+            questions = questions.filter(q => q.category === normalizedCategory);
+
+            console.log(`Found ${questions.length} questions for category: ${normalizedCategory}`);
+            if (questions.length === 0) {
+                console.log('Available categories:',
+                    [...new Set(getQuestions().map(q => q.category))]);
+            }
         }
-        const shuffledQuestions = filteredQuestions.sort(() => 0.5 - Math.random());
-        setTimeout(() => {
-            resolve(shuffledQuestions.slice(0, 10));
-        }, 500);
+
+        resolve(questions);
     });
 };

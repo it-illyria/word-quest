@@ -1,9 +1,10 @@
-import { type Question, questions } from "../data/questions";
+import { Question } from './type';
+import { getQuestions } from './question-loader';
 
 export const fetchQuestions = (): Promise<Question[]> => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
-			resolve(questions);
+			resolve(getQuestions());
 		}, 800);
 	});
 };
