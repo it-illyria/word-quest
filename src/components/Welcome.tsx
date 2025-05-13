@@ -1,35 +1,49 @@
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import React from "react";
 import "../index.css";
 import useSound from "use-sound";
 
-
-
 interface Props {
-    onStart: () => void;
+    onCategorySelect?: (category: string, difficulty?: string) => void;
 }
 
-const WelcomeScreen: React.FC<Props> = ({onStart}) => {
-    const [playHover] = useSound('/sounds/hover.mp3');
-    const [isLoading, setIsLoading] = React.useState(false);
+const quizCategories = [
+    { emoji: "🎨", name: "Art", description: "Test your art knowledge" },
+    { emoji: "📜", name: "History", description: "Journey through time" },
+    { emoji: "🔬", name: "Science", description: "Explore scientific wonders" },
+    { emoji: "🗳️", name: "Politics", description: "Political systems and events" },
+    { emoji: "⚽", name: "Sports", description: "Sports trivia challenge" },
+    {
+        emoji: "📚",
+        name: "Vocabulary",
+        description: "Expand your word power",
+        special: true
+    },
+];
 
-    const handleStart = () => {
-        setIsLoading(true);
-        onStart();
+const WelcomeScreen: React.FC<Props> = ({ onCategorySelect }) => {
+    const [playHover] = useSound('/sounds/hover.mp3');
+
+    const handleCategorySelect = (category: string) => {
+        if (category === "Vocabulary" && onCategorySelect) {
+            onCategorySelect(category, 'normal');
+        } else if (onCategorySelect) {
+            onCategorySelect(category);
+        }
     };
 
     return (
         <motion.div
             className="welcome-container"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 0.8}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
         >
             <motion.div
                 className="welcome-content"
-                initial={{y: -40, scale: 0.95}}
-                animate={{y: 0, scale: 1}}
-                transition={{type: "spring", stiffness: 100, damping: 10}}
+                initial={{ y: -40, scale: 0.95 }}
+                animate={{ y: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 100, damping: 10 }}
             >
                 <motion.div
                     className="floating-brain"
@@ -55,59 +69,56 @@ const WelcomeScreen: React.FC<Props> = ({onStart}) => {
 
                 <motion.h1
                     className="welcome-title"
-                    whileHover={{scale: 1.02}}
+                    whileHover={{ scale: 1.02 }}
                     onHoverStart={() => playHover()}
                 >
-                    Word Quest
+                    Quiz Explorer
                 </motion.h1>
 
                 <motion.p className="welcome-subtitle">
-                    Test your vocabulary skills
+                    Choose your challenge
                 </motion.p>
 
-                <motion.button
-                    className="start-button"
-                    whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.4)",
-                    }}
-                    whileTap={{scale: 0.98}}
-                    onClick={handleStart}
-                    disabled={isLoading}
+                <motion.div
+                    className="category-grid"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
                 >
-                    {isLoading ? (
-                        <motion.span
-                            animate={{rotate: 360}}
-                            transition={{duration: 1, repeat: Infinity, ease: "linear"}}
+                    {quizCategories.map((category, i) => (
+                        <motion.div
+                            key={category.name}
+                            className={`category-card ${category.special ? 'special-card' : ''}`}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.4 + i * 0.1 }}
+                            whileHover={{ scale: category.special ? 1 : 1.05 }}
+                            onHoverStart={() => playHover()}
+                            onClick={() => handleCategorySelect(category.name)}
                         >
-                            ⏳
-                        </motion.span>
-                    ) : (
-                        <motion.span
-                            animate={{x: [0, 5, 0]}}
-                            transition={{duration: 2, repeat: Infinity}}
-                        >
-                            🚀 Start Learning Journey →
-                        </motion.span>
-                    )}
-                </motion.button>
+                            <div className="category-emoji">{category.emoji}</div>
+                            <h3>{category.name}</h3>
+                            <p>{category.description}</p>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </motion.div>
 
             <motion.div
                 className="feature-grid"
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{delay: 0.5}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
             >
-                {["✨ Learn New Words", "🏆 Earn Badges", "📊 Track Progress"].map(
+                {["✨ Multiple Categories", "🏆 Earn Badges", "📊 Track Progress"].map(
                     (feature, i) => (
                         <motion.div
                             key={feature}
                             className="feature-card"
-                            initial={{y: 20, opacity: 0}}
-                            animate={{y: 0, opacity: 1}}
-                            transition={{delay: 0.6 + i * 0.1}}
-                            whileHover={{y: -5}}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.6 + i * 0.1 }}
+                            whileHover={{ y: -5 }}
                             onHoverStart={() => playHover()}
                         >
                             {feature}

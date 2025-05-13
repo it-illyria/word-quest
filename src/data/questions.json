@@ -144,7 +144,7 @@
   },
   {
     "id": "12",
-    "word": "ubiquitous",
+    "word": "omnipresent",
     "definition": "Present, appearing, or found everywhere",
     "choices": [
       "Extremely rare",
@@ -648,5 +648,3005 @@
     ],
     "correctAnswer": "Calm breeze",
     "category": "vocabulary"
+  },
+  {
+    "id": "art1",
+    "question": "Which artist painted the ceiling of the Sistine Chapel?",
+    "choices": [
+      "Leonardo da Vinci",
+      "Michelangelo",
+      "Raphael",
+      "Caravaggio"
+    ],
+    "correctAnswer": "Michelangelo",
+    "category": "art"
+  },
+  {
+    "id": "art2",
+    "question": "What art movement was characterized by dream-like imagery and unexpected juxtapositions?",
+    "choices": [
+      "Impressionism",
+      "Surrealism",
+      "Cubism",
+      "Baroque"
+    ],
+    "correctAnswer": "Surrealism",
+    "category": "art"
+  },
+  {
+    "id": "art3",
+    "question": "Which famous painting features a woman with an enigmatic smile?",
+    "choices": [
+      "The Starry Night",
+      "Girl with a Pearl Earring",
+      "Mona Lisa",
+      "The Scream"
+    ],
+    "correctAnswer": "Mona Lisa",
+    "category": "art"
+  },
+  {
+    "id": "art4",
+    "question": "What material did Auguste Rodin primarily use for his sculptures?",
+    "choices": [
+      "Marble",
+      "Bronze",
+      "Clay",
+      "Wood"
+    ],
+    "correctAnswer": "Bronze",
+    "category": "art"
+  },
+  {
+    "id": "art5",
+    "question": "Which artist cut off part of his own ear?",
+    "choices": [
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Salvador Dalí",
+      "Claude Monet"
+    ],
+    "correctAnswer": "Vincent van Gogh",
+    "category": "art"
+  },
+  {
+    "id": "art6",
+    "question": "What is the name of the Japanese art of flower arrangement?",
+    "choices": [
+      "Origami",
+      "Ikebana",
+      "Ukiyo-e",
+      "Sumi-e"
+    ],
+    "correctAnswer": "Ikebana",
+    "category": "art"
+  },
+  {
+    "id": "art7",
+    "question": "Which museum houses Leonardo da Vinci's Mona Lisa?",
+    "choices": [
+      "The Metropolitan Museum of Art",
+      "The Louvre",
+      "The Uffizi Gallery",
+      "The British Museum"
+    ],
+    "correctAnswer": "The Louvre",
+    "category": "art"
+  },
+  {
+    "id": "art8",
+    "question": "What art style is Jackson Pollock associated with?",
+    "choices": [
+      "Abstract Expressionism",
+      "Pop Art",
+      "Minimalism",
+      "Fauvism"
+    ],
+    "correctAnswer": "Abstract Expressionism",
+    "category": "art"
+  },
+  {
+    "id": "art9",
+    "question": "Which artist created the sculpture 'The Thinker'?",
+    "choices": [
+      "Michelangelo",
+      "Auguste Rodin",
+      "Donatello",
+      "Alberto Giacometti"
+    ],
+    "correctAnswer": "Auguste Rodin",
+    "category": "art"
+  },
+  {
+    "id": "art10",
+    "question": "What is the primary subject matter of Andy Warhol's most famous works?",
+    "choices": [
+      "Landscapes",
+      "Consumer products and celebrities",
+      "Historical events",
+      "Abstract shapes"
+    ],
+    "correctAnswer": "Consumer products and celebrities",
+    "category": "art"
+  },
+  {
+    "id": "art11",
+    "question": "Which of these is NOT one of the primary colors?",
+    "choices": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    "correctAnswer": "Green",
+    "category": "art"
+  },
+  {
+    "id": "art12",
+    "question": "What famous art school was founded by Walter Gropius in 1919?",
+    "choices": [
+      "Bauhaus",
+      "Black Mountain College",
+      "Royal Academy of Arts",
+      "École des Beaux-Arts"
+    ],
+    "correctAnswer": "Bauhaus",
+    "category": "art"
+  },
+  {
+    "id": "art13",
+    "question": "Which artist painted 'The Persistence of Memory' featuring melting clocks?",
+    "choices": [
+      "Pablo Picasso",
+      "Salvador Dalí",
+      "René Magritte",
+      "Joan Miró"
+    ],
+    "correctAnswer": "Salvador Dalí",
+    "category": "art"
+  },
+  {
+    "id": "art14",
+    "question": "What is the name of the artistic technique that uses small dots of color?",
+    "choices": [
+      "Impasto",
+      "Pointillism",
+      "Sfumato",
+      "Chiaroscuro"
+    ],
+    "correctAnswer": "Pointillism",
+    "category": "art"
+  },
+  {
+    "id": "art15",
+    "question": "Which ancient civilization built the Parthenon?",
+    "choices": [
+      "Egyptians",
+      "Romans",
+      "Greeks",
+      "Persians"
+    ],
+    "correctAnswer": "Greeks",
+    "category": "art"
+  },
+  {
+    "id": "art16",
+    "question": "What material is traditionally used in Chinese ink wash paintings?",
+    "choices": [
+      "Oil paint",
+      "Watercolor",
+      "Ink on silk or paper",
+      "Acrylic"
+    ],
+    "correctAnswer": "Ink on silk or paper",
+    "category": "art"
+  },
+  {
+    "id": "art17",
+    "question": "Which artist was known for his 'Campbell's Soup Cans' artwork?",
+    "choices": [
+      "Roy Lichtenstein",
+      "Andy Warhol",
+      "Jasper Johns",
+      "Robert Rauschenberg"
+    ],
+    "correctAnswer": "Andy Warhol",
+    "category": "art"
+  },
+  {
+    "id": "art18",
+    "question": "What is the name of the artistic style that emerged in France in the 1860s, characterized by visible brush strokes?",
+    "choices": [
+      "Impressionism",
+      "Expressionism",
+      "Realism",
+      "Romanticism"
+    ],
+    "correctAnswer": "Impressionism",
+    "category": "art"
+  },
+  {
+    "id": "art19",
+    "question": "Which famous mural by Leonardo da Vinci is located in a Milan monastery?",
+    "choices": [
+      "The School of Athens",
+      "The Last Supper",
+      "The Creation of Adam",
+      "The Sistine Madonna"
+    ],
+    "correctAnswer": "The Last Supper",
+    "category": "art"
+  },
+  {
+    "id": "art20",
+    "question": "What is the term for art that doesn't represent recognizable objects?",
+    "choices": [
+      "Realism",
+      "Abstract art",
+      "Representational art",
+      "Figurative art"
+    ],
+    "correctAnswer": "Abstract art",
+    "category": "art"
+  },
+  {
+    "id": "art21",
+    "question": "Which artist is famous for his 'Blue Period'?",
+    "choices": [
+      "Pablo Picasso",
+      "Henri Matisse",
+      "Marc Chagall",
+      "Wassily Kandinsky"
+    ],
+    "correctAnswer": "Pablo Picasso",
+    "category": "art"
+  },
+  {
+    "id": "art22",
+    "question": "What is the name of the Japanese woodblock print style featuring scenes of the 'floating world'?",
+    "choices": [
+      "Sumi-e",
+      "Ikebana",
+      "Ukiyo-e",
+      "Origami"
+    ],
+    "correctAnswer": "Ukiyo-e",
+    "category": "art"
+  },
+  {
+    "id": "art23",
+    "question": "Which art movement was characterized by exaggerated colors and distorted forms for emotional effect?",
+    "choices": [
+      "Impressionism",
+      "Expressionism",
+      "Cubism",
+      "Surrealism"
+    ],
+    "correctAnswer": "Expressionism",
+    "category": "art"
+  },
+  {
+    "id": "art24",
+    "question": "What is the name of the famous painting by Edvard Munch featuring a figure screaming?",
+    "choices": [
+      "The Cry",
+      "The Scream",
+      "The Shout",
+      "The Howl"
+    ],
+    "correctAnswer": "The Scream",
+    "category": "art"
+  },
+  {
+    "id": "art25",
+    "question": "Which artist created the mobile sculptures that move with air currents?",
+    "choices": [
+      "Alexander Calder",
+      "Henry Moore",
+      "Constantin Brâncuși",
+      "Louise Bourgeois"
+    ],
+    "correctAnswer": "Alexander Calder",
+    "category": "art"
+  },
+  {
+    "id": "art26",
+    "question": "What is the term for the preliminary drawing made before a painting?",
+    "choices": [
+      "Sketch",
+      "Underpainting",
+      "Cartoon",
+      "Maquette"
+    ],
+    "correctAnswer": "Sketch",
+    "category": "art"
+  },
+  {
+    "id": "art27",
+    "question": "Which ancient wonder was a giant statue of the sun god Helios?",
+    "choices": [
+      "The Colossus of Rhodes",
+      "The Statue of Zeus at Olympia",
+      "The Great Pyramid of Giza",
+      "The Hanging Gardens of Babylon"
+    ],
+    "correctAnswer": "The Colossus of Rhodes",
+    "category": "art"
+  },
+  {
+    "id": "art28",
+    "question": "What is the name of the technique where paint is applied thickly to create texture?",
+    "choices": [
+      "Glazing",
+      "Scumbling",
+      "Impasto",
+      "Sfumato"
+    ],
+    "correctAnswer": "Impasto",
+    "category": "art"
+  },
+  {
+    "id": "art29",
+    "question": "Which American artist is known for his paintings of soup cans and celebrities?",
+    "choices": [
+      "Jackson Pollock",
+      "Andy Warhol",
+      "Mark Rothko",
+      "Willem de Kooning"
+    ],
+    "correctAnswer": "Andy Warhol",
+    "category": "art"
+  },
+  {
+    "id": "art30",
+    "question": "What is the name of the famous ancient Greek statue depicting the goddess of love?",
+    "choices": [
+      "Venus de Milo",
+      "Winged Victory of Samothrace",
+      "Discobolus",
+      "Laocoön and His Sons"
+    ],
+    "correctAnswer": "Venus de Milo",
+    "category": "art"
+  },
+  {
+    "id": "art31",
+    "question": "Which artist painted 'The Birth of Venus'?",
+    "choices": [
+      "Michelangelo",
+      "Leonardo da Vinci",
+      "Sandro Botticelli",
+      "Titian"
+    ],
+    "correctAnswer": "Sandro Botticelli",
+    "category": "art"
+  },
+  {
+    "id": "art32",
+    "question": "What is the term for art that is created for public spaces?",
+    "choices": [
+      "Installation art",
+      "Public art",
+      "Street art",
+      "Environmental art"
+    ],
+    "correctAnswer": "Public art",
+    "category": "art"
+  },
+  {
+    "id": "art33",
+    "question": "Which art movement was characterized by geometric forms and multiple perspectives?",
+    "choices": [
+      "Futurism",
+      "Cubism",
+      "Dada",
+      "De Stijl"
+    ],
+    "correctAnswer": "Cubism",
+    "category": "art"
+  },
+  {
+    "id": "art34",
+    "question": "What is the name of the famous fountain designed by Marcel Duchamp?",
+    "choices": [
+      "Fountain",
+      "Urinal",
+      "Readymade",
+      "The Spring"
+    ],
+    "correctAnswer": "Fountain",
+    "category": "art"
+  },
+  {
+    "id": "art35",
+    "question": "Which artist is known for his 'drip paintings'?",
+    "choices": [
+      "Mark Rothko",
+      "Jackson Pollock",
+      "Willem de Kooning",
+      "Barnett Newman"
+    ],
+    "correctAnswer": "Jackson Pollock",
+    "category": "art"
+  },
+  {
+    "id": "art36",
+    "question": "What is the term for the study of beauty and taste in art?",
+    "choices": [
+      "Art history",
+      "Aesthetics",
+      "Art criticism",
+      "Iconography"
+    ],
+    "correctAnswer": "Aesthetics",
+    "category": "art"
+  },
+  {
+    "id": "art37",
+    "question": "Which famous art museum is located in Bilbao, Spain?",
+    "choices": [
+      "Prado Museum",
+      "Guggenheim Museum",
+      "Reina Sofía Museum",
+      "Thyssen-Bornemisza Museum"
+    ],
+    "correctAnswer": "Guggenheim Museum",
+    "category": "art"
+  },
+  {
+    "id": "art38",
+    "question": "What is the name of the artistic technique that creates the illusion of depth on a flat surface?",
+    "choices": [
+      "Perspective",
+      "Chiaroscuro",
+      "Foreshortening",
+      "Trompe-l'œil"
+    ],
+    "correctAnswer": "Perspective",
+    "category": "art"
+  },
+  {
+    "id": "art39",
+    "question": "Which artist painted 'The Night Watch'?",
+    "choices": [
+      "Johannes Vermeer",
+      "Rembrandt",
+      "Peter Paul Rubens",
+      "Frans Hals"
+    ],
+    "correctAnswer": "Rembrandt",
+    "category": "art"
+  },
+  {
+    "id": "art40",
+    "question": "What is the name of the art movement that emerged in the 1950s-60s featuring everyday objects as subject matter?",
+    "choices": [
+      "Abstract Expressionism",
+      "Pop Art",
+      "Minimalism",
+      "Conceptual Art"
+    ],
+    "correctAnswer": "Pop Art",
+    "category": "art"
+  },
+  {
+    "id": "art41",
+    "question": "Which French artist is known for his paintings of water lilies?",
+    "choices": [
+      "Pierre-Auguste Renoir",
+      "Édouard Manet",
+      "Claude Monet",
+      "Paul Cézanne"
+    ],
+    "correctAnswer": "Claude Monet",
+    "category": "art"
+  },
+  {
+    "id": "art42",
+    "question": "What is the term for a painting done rapidly in watercolor on wet plaster?",
+    "choices": [
+      "Fresco",
+      "Tempera",
+      "Gouache",
+      "Encaustic"
+    ],
+    "correctAnswer": "Fresco",
+    "category": "art"
+  },
+  {
+    "id": "art43",
+    "question": "Which artist created the 'Guernica' painting depicting the horrors of war?",
+    "choices": [
+      "Salvador Dalí",
+      "Pablo Picasso",
+      "Francisco Goya",
+      "Diego Rivera"
+    ],
+    "correctAnswer": "Pablo Picasso",
+    "category": "art"
+  },
+  {
+    "id": "art44",
+    "question": "What is the name of the artistic style that emerged in Russia after the 1917 Revolution?",
+    "choices": [
+      "Suprematism",
+      "Constructivism",
+      "Socialist Realism",
+      "Futurism"
+    ],
+    "correctAnswer": "Constructivism",
+    "category": "art"
+  },
+  {
+    "id": "art45",
+    "question": "Which artist is known for his 'cut-outs' made from painted paper?",
+    "choices": [
+      "Piet Mondrian",
+      "Henri Matisse",
+      "Georges Braque",
+      "Paul Klee"
+    ],
+    "correctAnswer": "Henri Matisse",
+    "category": "art"
+  },
+  {
+    "id": "art46",
+    "question": "What is the term for the preliminary model for a sculpture?",
+    "choices": [
+      "Sketch",
+      "Maquette",
+      "Cartoon",
+      "Study"
+    ],
+    "correctAnswer": "Maquette",
+    "category": "art"
+  },
+  {
+    "id": "art47",
+    "question": "Which ancient civilization created the terracotta warriors?",
+    "choices": [
+      "Egyptian",
+      "Greek",
+      "Chinese",
+      "Roman"
+    ],
+    "correctAnswer": "Chinese",
+    "category": "art"
+  },
+  {
+    "id": "art48",
+    "question": "What is the name of the art movement that sought to depict objects from multiple viewpoints simultaneously?",
+    "choices": [
+      "Futurism",
+      "Cubism",
+      "Surrealism",
+      "Dada"
+    ],
+    "correctAnswer": "Cubism",
+    "category": "art"
+  },
+  {
+    "id": "art49",
+    "question": "Which artist painted 'American Gothic' featuring a farmer and his daughter?",
+    "choices": [
+      "Edward Hopper",
+      "Grant Wood",
+      "Norman Rockwell",
+      "Andrew Wyeth"
+    ],
+    "correctAnswer": "Grant Wood",
+    "category": "art"
+  },
+  {
+    "id": "art50",
+    "question": "What is the name of the famous ancient Greek statue depicting a discus thrower?",
+    "choices": [
+      "Discobolus",
+      "Doryphoros",
+      "Apollo Belvedere",
+      "Hermes and the Infant Dionysus"
+    ],
+    "correctAnswer": "Discobolus",
+    "category": "art"
+  },
+  {
+    "id": "history1",
+    "question": "Who was the first President of the United States?",
+    "choices": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "John Adams"
+    ],
+    "correctAnswer": "George Washington",
+    "category": "history"
+  },
+  {
+    "id": "history2",
+    "question": "In which year did World War I begin?",
+    "choices": [
+      "1912",
+      "1914",
+      "1916",
+      "1918"
+    ],
+    "correctAnswer": "1914",
+    "category": "history"
+  },
+  {
+    "id": "history3",
+    "question": "Who was the leader of the Soviet Union during World War II?",
+    "choices": [
+      "Vladimir Lenin",
+      "Joseph Stalin",
+      "Nikita Khrushchev",
+      "Mikhail Gorbachev"
+    ],
+    "correctAnswer": "Joseph Stalin",
+    "category": "history"
+  },
+  {
+    "id": "history4",
+    "question": "Which country was formerly known as Persia?",
+    "choices": [
+      "Turkey",
+      "Iran",
+      "Iraq",
+      "Egypt"
+    ],
+    "correctAnswer": "Iran",
+    "category": "history"
+  },
+  {
+    "id": "history5",
+    "question": "In which year did the Titanic sink?",
+    "choices": [
+      "1901",
+      "1912",
+      "1920",
+      "1935"
+    ],
+    "correctAnswer": "1912",
+    "category": "history"
+  },
+  {
+    "id": "history6",
+    "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
+    "choices": [
+      "Amelia Earhart",
+      "Bessie Coleman",
+      "Harriet Quimby",
+      "Jacqueline Cochran"
+    ],
+    "correctAnswer": "Amelia Earhart",
+    "category": "history"
+  },
+  {
+    "id": "history7",
+    "question": "Which empire was ruled by Julius Caesar?",
+    "choices": [
+      "Roman Empire",
+      "Ottoman Empire",
+      "British Empire",
+      "Byzantine Empire"
+    ],
+    "correctAnswer": "Roman Empire",
+    "category": "history"
+  },
+  {
+    "id": "history8",
+    "question": "What year did the Berlin Wall fall?",
+    "choices": [
+      "1985",
+      "1987",
+      "1989",
+      "1991"
+    ],
+    "correctAnswer": "1989",
+    "category": "history"
+  },
+  {
+    "id": "history9",
+    "question": "Who was the first emperor of China?",
+    "choices": [
+      "Qin Shi Huang",
+      "Han Wudi",
+      "Li Shimin",
+      "Tang Taizong"
+    ],
+    "correctAnswer": "Qin Shi Huang",
+    "category": "history"
+  },
+  {
+    "id": "history10",
+    "question": "In which year did the United States declare independence?",
+    "choices": [
+      "1776",
+      "1789",
+      "1800",
+      "1812"
+    ],
+    "correctAnswer": "1776",
+    "category": "history"
+  },
+  {
+    "id": "history11",
+    "question": "What ancient civilization built the pyramids?",
+    "choices": [
+      "Ancient Egypt",
+      "Ancient Greece",
+      "Ancient Rome",
+      "Ancient Mesopotamia"
+    ],
+    "correctAnswer": "Ancient Egypt",
+    "category": "history"
+  },
+  {
+    "id": "history12",
+    "question": "Who was the longest-reigning British monarch before Queen Elizabeth II?",
+    "choices": [
+      "Queen Victoria",
+      "King George III",
+      "King Henry VIII",
+      "Queen Elizabeth I"
+    ],
+    "correctAnswer": "Queen Victoria",
+    "category": "history"
+  },
+  {
+    "id": "history13",
+    "question": "Which event triggered the start of World War II?",
+    "choices": [
+      "The assassination of Archduke Franz Ferdinand",
+      "The German invasion of Poland",
+      "The attack on Pearl Harbor",
+      "The signing of the Treaty of Versailles"
+    ],
+    "correctAnswer": "The German invasion of Poland",
+    "category": "history"
+  },
+  {
+    "id": "history14",
+    "question": "Who was the British Prime Minister during most of World War II?",
+    "choices": [
+      "Winston Churchill",
+      "Neville Chamberlain",
+      "Clement Attlee",
+      "Edward Heath"
+    ],
+    "correctAnswer": "Winston Churchill",
+    "category": "history"
+  },
+  {
+    "id": "history15",
+    "question": "What was the name of the ship that brought the Pilgrims to America in 1620?",
+    "choices": [
+      "Mayflower",
+      "Santa Maria",
+      "Endeavour",
+      "Beagle"
+    ],
+    "correctAnswer": "Mayflower",
+    "category": "history"
+  },
+  {
+    "id": "history16",
+    "question": "Who was the famous civil rights leader who delivered the 'I Have a Dream' speech?",
+    "choices": [
+      "Rosa Parks",
+      "Malcolm X",
+      "Martin Luther King Jr.",
+      "Frederick Douglass"
+    ],
+    "correctAnswer": "Martin Luther King Jr.",
+    "category": "history"
+  },
+  {
+    "id": "history17",
+    "question": "Who discovered the Americas in 1492?",
+    "choices": [
+      "Leif Erikson",
+      "Christopher Columbus",
+      "Ferdinand Magellan",
+      "Amerigo Vespucci"
+    ],
+    "correctAnswer": "Christopher Columbus",
+    "category": "history"
+  },
+  {
+    "id": "history18",
+    "question": "Which war was fought between the North and South regions of the United States?",
+    "choices": [
+      "War of 1812",
+      "Civil War",
+      "Spanish-American War",
+      "World War I"
+    ],
+    "correctAnswer": "Civil War",
+    "category": "history"
+  },
+  {
+    "id": "history19",
+    "question": "Who was the leader of the Nazi Party in Germany?",
+    "choices": [
+      "Adolf Hitler",
+      "Joseph Stalin",
+      "Benito Mussolini",
+      "Fidel Castro"
+    ],
+    "correctAnswer": "Adolf Hitler",
+    "category": "history"
+  },
+  {
+    "id": "history20",
+    "question": "Which civilization is famous for creating the first written language, cuneiform?",
+    "choices": [
+      "Ancient Egypt",
+      "Ancient Greece",
+      "Ancient Mesopotamia",
+      "Ancient India"
+    ],
+    "correctAnswer": "Ancient Mesopotamia",
+    "category": "history"
+  },
+  {
+    "id": "history21",
+    "question": "In which country did the Industrial Revolution begin?",
+    "choices": [
+      "United States",
+      "France",
+      "Germany",
+      "United Kingdom"
+    ],
+    "correctAnswer": "United Kingdom",
+    "category": "history"
+  },
+  {
+    "id": "history22",
+    "question": "What was the main cause of the French Revolution?",
+    "choices": [
+      "The execution of King Louis XVI",
+      "The storming of the Bastille",
+      "The inequalities between the estates",
+      "The rise of Napoleon Bonaparte"
+    ],
+    "correctAnswer": "The inequalities between the estates",
+    "category": "history"
+  },
+  {
+    "id": "history23",
+    "question": "Who was the first man to set foot on the Moon?",
+    "choices": [
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "Neil Armstrong",
+      "John Glenn"
+    ],
+    "correctAnswer": "Neil Armstrong",
+    "category": "history"
+  },
+  {
+    "id": "history24",
+    "question": "Which civilization built the city of Machu Picchu?",
+    "choices": [
+      "Aztec",
+      "Mayan",
+      "Inca",
+      "Olmec"
+    ],
+    "correctAnswer": "Inca",
+    "category": "history"
+  },
+  {
+    "id": "history25",
+    "question": "Which empire was led by Genghis Khan?",
+    "choices": [
+      "Ottoman Empire",
+      "Mongol Empire",
+      "Roman Empire",
+      "Mughal Empire"
+    ],
+    "correctAnswer": "Mongol Empire",
+    "category": "history"
+  },
+  {
+    "id": "history26",
+    "question": "Which conflict took place between the United States and North Korea in the early 1950s?",
+    "choices": [
+      "Vietnam War",
+      "Korean War",
+      "World War I",
+      "Cold War"
+    ],
+    "correctAnswer": "Korean War",
+    "category": "history"
+  },
+  {
+    "id": "history27",
+    "question": "What was the name of the first artificial Earth satellite?",
+    "choices": [
+      "Apollo 11",
+      "Sputnik 1",
+      "Hubble Telescope",
+      "Venera 1"
+    ],
+    "correctAnswer": "Sputnik 1",
+    "category": "history"
+  },
+  {
+    "id": "history28",
+    "question": "Which war was fought between the United States and Mexico from 1846 to 1848?",
+    "choices": [
+      "War of 1812",
+      "Mexican-American War",
+      "Spanish-American War",
+      "Civil War"
+    ],
+    "correctAnswer": "Mexican-American War",
+    "category": "history"
+  },
+  {
+    "id": "history29",
+    "question": "Who was the first emperor of the Roman Empire?",
+    "choices": [
+      "Julius Caesar",
+      "Augustus",
+      "Nero",
+      "Caligula"
+    ],
+    "correctAnswer": "Augustus",
+    "category": "history"
+  },
+  {
+    "id": "history30",
+    "question": "Which country was the first to grant women the right to vote?",
+    "choices": [
+      "United States",
+      "New Zealand",
+      "United Kingdom",
+      "Australia"
+    ],
+    "correctAnswer": "New Zealand",
+    "category": "history"
+  },
+  {
+    "id": "history31",
+    "question": "Who was the first President of the United States?",
+    "choices": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "John Adams"
+    ],
+    "correctAnswer": "George Washington",
+    "category": "History"
+  },
+  {
+    "id": "history32",
+    "question": "What year did World War I begin?",
+    "choices": [
+      "1912",
+      "1914",
+      "1916",
+      "1918"
+    ],
+    "correctAnswer": "1914",
+    "category": "History"
+  },
+  {
+    "id": "history33",
+    "question": "Who was the leader of the Soviet Union during World War II?",
+    "choices": [
+      "Joseph Stalin",
+      "Leon Trotsky",
+      "Vladimir Lenin",
+      "Nikita Khrushchev"
+    ],
+    "correctAnswer": "Joseph Stalin",
+    "category": "History"
+  },
+  {
+    "id": "history34",
+    "question": "Which country was formerly known as Persia?",
+    "choices": [
+      "Iraq",
+      "Iran",
+      "Syria",
+      "Saudi Arabia"
+    ],
+    "correctAnswer": "Iran",
+    "category": "History"
+  },
+  {
+    "id": "history35",
+    "question": "Who was the first female Prime Minister of the United Kingdom?",
+    "choices": [
+      "Theresa May",
+      "Margaret Thatcher",
+      "Elizabeth II",
+      "Ellen Johnson Sirleaf"
+    ],
+    "correctAnswer": "Margaret Thatcher",
+    "category": "History"
+  },
+  {
+    "id": "history36",
+    "question": "What ancient civilization built the pyramids of Giza?",
+    "choices": [
+      "The Romans",
+      "The Egyptians",
+      "The Mayans",
+      "The Greeks"
+    ],
+    "correctAnswer": "The Egyptians",
+    "category": "History"
+  },
+  {
+    "id": "history37",
+    "question": "Which war was fought between the North and the South of the United States?",
+    "choices": [
+      "The Revolutionary War",
+      "The War of 1812",
+      "The Civil War",
+      "The Spanish-American War"
+    ],
+    "correctAnswer": "The Civil War",
+    "category": "History"
+  },
+  {
+    "id": "history38",
+    "question": "Which country was the first to grant women the right to vote?",
+    "choices": [
+      "United Kingdom",
+      "United States",
+      "New Zealand",
+      "Australia"
+    ],
+    "correctAnswer": "New Zealand",
+    "category": "History"
+  },
+  {
+    "id": "history39",
+    "question": "Who was the first emperor of China?",
+    "choices": [
+      "Qin Shi Huang",
+      "Genghis Khan",
+      "Kublai Khan",
+      "Emperor Wu"
+    ],
+    "correctAnswer": "Qin Shi Huang",
+    "category": "History"
+  },
+  {
+    "id": "history40",
+    "question": "In which year did the Berlin Wall fall?",
+    "choices": [
+      "1987",
+      "1989",
+      "1991",
+      "1993"
+    ],
+    "correctAnswer": "1989",
+    "category": "History"
+  },
+  {
+    "id": "history41",
+    "question": "What was the name of the ship that carried the Pilgrims to America in 1620?",
+    "choices": [
+      "The Mayflower",
+      "The Nina",
+      "The Santa Maria",
+      "The Endeavour"
+    ],
+    "correctAnswer": "The Mayflower",
+    "category": "History"
+  },
+  {
+    "id": "history42",
+    "question": "Who was the famous civil rights leader who delivered the 'I Have a Dream' speech?",
+    "choices": [
+      "Malcolm X",
+      "Martin Luther King Jr.",
+      "Rosa Parks",
+      "Frederick Douglass"
+    ],
+    "correctAnswer": "Martin Luther King Jr.",
+    "category": "History"
+  },
+  {
+    "id": "history43",
+    "question": "Which empire was ruled by Julius Caesar?",
+    "choices": [
+      "Roman Empire",
+      "Ottoman Empire",
+      "Mongol Empire",
+      "Persian Empire"
+    ],
+    "correctAnswer": "Roman Empire",
+    "category": "History"
+  },
+  {
+    "id": "history44",
+    "question": "Which war ended with the signing of the Treaty of Versailles?",
+    "choices": [
+      "World War I",
+      "World War II",
+      "The American Civil War",
+      "The Napoleonic Wars"
+    ],
+    "correctAnswer": "World War I",
+    "category": "History"
+  },
+  {
+    "id": "history45",
+    "question": "Which country was ruled by the ancient Inca Empire?",
+    "choices": [
+      "Mexico",
+      "Brazil",
+      "Peru",
+      "Chile"
+    ],
+    "correctAnswer": "Peru",
+    "category": "History"
+  },
+  {
+    "id": "history46",
+    "question": "In what year did Christopher Columbus first land in the Americas?",
+    "choices": [
+      "1492",
+      "1500",
+      "1510",
+      "1480"
+    ],
+    "correctAnswer": "1492",
+    "category": "History"
+  },
+  {
+    "id": "history47",
+    "question": "Who was the leader of the French Revolution?",
+    "choices": [
+      "Napoleon Bonaparte",
+      "Maximilien Robespierre",
+      "Louis XVI",
+      "Georges Danton"
+    ],
+    "correctAnswer": "Maximilien Robespierre",
+    "category": "History"
+  },
+  {
+    "id": "history48",
+    "question": "What was the name of the ship that sank after hitting an iceberg in 1912?",
+    "choices": [
+      "The Lusitania",
+      "The Titanic",
+      "The Britannic",
+      "The Olympia"
+    ],
+    "correctAnswer": "The Titanic",
+    "category": "History"
+  },
+  {
+    "id": "history49",
+    "question": "Which event started World War II?",
+    "choices": [
+      "The bombing of Pearl Harbor",
+      "The invasion of Poland",
+      "The attack on France",
+      "The bombing of Hiroshima"
+    ],
+    "correctAnswer": "The invasion of Poland",
+    "category": "History"
+  },
+  {
+    "id": "history50",
+    "question": "Who was the last monarch of France before the French Revolution?",
+    "choices": [
+      "Louis XVI",
+      "Louis XIV",
+      "Napoleon III",
+      "Charles X"
+    ],
+    "correctAnswer": "Louis XVI",
+    "category": "History"
+  },
+  {
+    "id": "science1",
+    "question": "What is the chemical symbol for water?",
+    "choices": [
+      "H2O",
+      "CO2",
+      "O2",
+      "H2SO4"
+    ],
+    "correctAnswer": "H2O",
+    "category": "Science"
+  },
+  {
+    "id": "science2",
+    "question": "Who developed the theory of relativity?",
+    "choices": [
+      "Isaac Newton",
+      "Albert Einstein",
+      "Nikola Tesla",
+      "Galileo Galilei"
+    ],
+    "correctAnswer": "Albert Einstein",
+    "category": "Science"
+  },
+  {
+    "id": "science3",
+    "question": "What is the most common gas in Earth's atmosphere?",
+    "choices": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "correctAnswer": "Nitrogen",
+    "category": "Science"
+  },
+  {
+    "id": "science4",
+    "question": "What planet is known as the Red Planet?",
+    "choices": [
+      "Venus",
+      "Earth",
+      "Mars",
+      "Jupiter"
+    ],
+    "correctAnswer": "Mars",
+    "category": "Science"
+  },
+  {
+    "id": "science5",
+    "question": "What is the powerhouse of the cell?",
+    "choices": [
+      "Nucleus",
+      "Mitochondria",
+      "Ribosome",
+      "Endoplasmic Reticulum"
+    ],
+    "correctAnswer": "Mitochondria",
+    "category": "Science"
+  },
+  {
+    "id": "science6",
+    "question": "Which element has the atomic number 1?",
+    "choices": [
+      "Helium",
+      "Oxygen",
+      "Hydrogen",
+      "Carbon"
+    ],
+    "correctAnswer": "Hydrogen",
+    "category": "Science"
+  },
+  {
+    "id": "science7",
+    "question": "What is the most common element in the Earth's crust?",
+    "choices": [
+      "Oxygen",
+      "Silicon",
+      "Iron",
+      "Aluminum"
+    ],
+    "correctAnswer": "Oxygen",
+    "category": "Science"
+  },
+  {
+    "id": "science8",
+    "question": "What is the chemical formula for methane?",
+    "choices": [
+      "CH4",
+      "CO2",
+      "C2H6",
+      "CH3OH"
+    ],
+    "correctAnswer": "CH4",
+    "category": "Science"
+  },
+  {
+    "id": "science9",
+    "question": "What is the hardest natural substance on Earth?",
+    "choices": [
+      "Gold",
+      "Diamond",
+      "Platinum",
+      "Iron"
+    ],
+    "correctAnswer": "Diamond",
+    "category": "Science"
+  },
+  {
+    "id": "science10",
+    "question": "What organ in the human body produces insulin?",
+    "choices": [
+      "Heart",
+      "Liver",
+      "Kidneys",
+      "Pancreas"
+    ],
+    "correctAnswer": "Pancreas",
+    "category": "Science"
+  },
+  {
+    "id": "science11",
+    "question": "Which planet has the most moons?",
+    "choices": [
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Saturn"
+    ],
+    "correctAnswer": "Saturn",
+    "category": "Science"
+  },
+  {
+    "id": "science12",
+    "question": "What is the chemical symbol for gold?",
+    "choices": [
+      "Ag",
+      "Au",
+      "Pb",
+      "Fe"
+    ],
+    "correctAnswer": "Au",
+    "category": "Science"
+  },
+  {
+    "id": "science13",
+    "question": "What is the study of living organisms called?",
+    "choices": [
+      "Botany",
+      "Geology",
+      "Zoology",
+      "Biology"
+    ],
+    "correctAnswer": "Biology",
+    "category": "Science"
+  },
+  {
+    "id": "science14",
+    "question": "Which vitamin is primarily obtained from sunlight?",
+    "choices": [
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin B12"
+    ],
+    "correctAnswer": "Vitamin D",
+    "category": "Science"
+  },
+  {
+    "id": "science15",
+    "question": "What is the boiling point of water at sea level?",
+    "choices": [
+      "90°C",
+      "100°C",
+      "110°C",
+      "120°C"
+    ],
+    "correctAnswer": "100°C",
+    "category": "Science"
+  },
+  {
+    "id": "science16",
+    "question": "What is the process by which plants make their own food?",
+    "choices": [
+      "Digestion",
+      "Respiration",
+      "Photosynthesis",
+      "Evaporation"
+    ],
+    "correctAnswer": "Photosynthesis",
+    "category": "Science"
+  },
+  {
+    "id": "science17",
+    "question": "What force pulls objects toward the Earth?",
+    "choices": [
+      "Magnetism",
+      "Gravity",
+      "Friction",
+      "Electrostatic Force"
+    ],
+    "correctAnswer": "Gravity",
+    "category": "Science"
+  },
+  {
+    "id": "science18",
+    "question": "What type of animal is a frog?",
+    "choices": [
+      "Mammal",
+      "Bird",
+      "Amphibian",
+      "Reptile"
+    ],
+    "correctAnswer": "Amphibian",
+    "category": "Science"
+  },
+  {
+    "id": "science19",
+    "question": "What is the most abundant gas in the Earth's atmosphere?",
+    "choices": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Helium"
+    ],
+    "correctAnswer": "Nitrogen",
+    "category": "Science"
+  },
+  {
+    "id": "science20",
+    "question": "Which of these is a renewable source of energy?",
+    "choices": [
+      "Coal",
+      "Oil",
+      "Wind",
+      "Natural Gas"
+    ],
+    "correctAnswer": "Wind",
+    "category": "Science"
+  },
+  {
+    "id": "science21",
+    "question": "What is the most common element in the human body?",
+    "choices": [
+      "Oxygen",
+      "Carbon",
+      "Hydrogen",
+      "Nitrogen"
+    ],
+    "correctAnswer": "Oxygen",
+    "category": "Science"
+  },
+  {
+    "id": "science22",
+    "question": "What is the freezing point of water in Celsius?",
+    "choices": [
+      "0°C",
+      "-1°C",
+      "32°C",
+      "100°C"
+    ],
+    "correctAnswer": "0°C",
+    "category": "Science"
+  },
+  {
+    "id": "science23",
+    "question": "What is the main source of energy for the Earth?",
+    "choices": [
+      "The Moon",
+      "The Sun",
+      "The Earth’s Core",
+      "Nuclear Fusion"
+    ],
+    "correctAnswer": "The Sun",
+    "category": "Science"
+  },
+  {
+    "id": "science24",
+    "question": "What type of rock is formed from lava?",
+    "choices": [
+      "Sedimentary",
+      "Igneous",
+      "Metamorphic",
+      "Volcanic"
+    ],
+    "correctAnswer": "Igneous",
+    "category": "Science"
+  },
+  {
+    "id": "science25",
+    "question": "What is the chemical formula for carbon dioxide?",
+    "choices": [
+      "CO2",
+      "CO",
+      "O2",
+      "H2CO3"
+    ],
+    "correctAnswer": "CO2",
+    "category": "Science"
+  },
+  {
+    "id": "science26",
+    "question": "What is the primary function of red blood cells?",
+    "choices": [
+      "Fight infection",
+      "Carry oxygen",
+      "Clot blood",
+      "Provide energy"
+    ],
+    "correctAnswer": "Carry oxygen",
+    "category": "Science"
+  },
+  {
+    "id": "science27",
+    "question": "Which organ in the human body pumps blood?",
+    "choices": [
+      "Brain",
+      "Heart",
+      "Liver",
+      "Stomach"
+    ],
+    "correctAnswer": "Heart",
+    "category": "Science"
+  },
+  {
+    "id": "science28",
+    "question": "What is the most abundant element in the universe?",
+    "choices": [
+      "Oxygen",
+      "Carbon",
+      "Hydrogen",
+      "Helium"
+    ],
+    "correctAnswer": "Hydrogen",
+    "category": "Science"
+  },
+  {
+    "id": "science29",
+    "question": "What is the chemical formula for table salt?",
+    "choices": [
+      "NaCl",
+      "KCl",
+      "NaOH",
+      "HCl"
+    ],
+    "correctAnswer": "NaCl",
+    "category": "Science"
+  },
+  {
+    "id": "science30",
+    "question": "What is the main function of white blood cells?",
+    "choices": [
+      "Carry oxygen",
+      "Fight infection",
+      "Clot blood",
+      "Transport nutrients"
+    ],
+    "correctAnswer": "Fight infection",
+    "category": "Science"
+  },
+  {
+    "id": "science31",
+    "question": "What planet is the closest to the Sun?",
+    "choices": [
+      "Venus",
+      "Mercury",
+      "Earth",
+      "Mars"
+    ],
+    "correctAnswer": "Mercury",
+    "category": "Science"
+  },
+  {
+    "id": "science32",
+    "question": "What is the name of the galaxy we live in?",
+    "choices": [
+      "Andromeda",
+      "Milky Way",
+      "Triangulum",
+      "Whirlpool"
+    ],
+    "correctAnswer": "Milky Way",
+    "category": "Science"
+  },
+  {
+    "id": "science33",
+    "question": "What is the force that causes objects to fall towards the Earth?",
+    "choices": [
+      "Inertia",
+      "Friction",
+      "Gravity",
+      "Magnetism"
+    ],
+    "correctAnswer": "Gravity",
+    "category": "Science"
+  },
+  {
+    "id": "science34",
+    "question": "Which planet is known for its giant storm, the Great Red Spot?",
+    "choices": [
+      "Saturn",
+      "Jupiter",
+      "Neptune",
+      "Uranus"
+    ],
+    "correctAnswer": "Jupiter",
+    "category": "Science"
+  },
+  {
+    "id": "science35",
+    "question": "What is the term for the solidification of lava into rock?",
+    "choices": [
+      "Erosion",
+      "Sedimentation",
+      "Solidification",
+      "Volcanic activity"
+    ],
+    "correctAnswer": "Solidification",
+    "category": "Science"
+  },
+  {
+    "id": "science36",
+    "question": "What is the most common state of matter in the universe?",
+    "choices": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Plasma"
+    ],
+    "correctAnswer": "Plasma",
+    "category": "Science"
+  },
+  {
+    "id": "science37",
+    "question": "What is the process by which a plant absorbs water?",
+    "choices": [
+      "Osmosis",
+      "Diffusion",
+      "Transpiration",
+      "Condensation"
+    ],
+    "correctAnswer": "Osmosis",
+    "category": "Science"
+  },
+  {
+    "id": "science38",
+    "question": "Which is the hardest known substance in the universe?",
+    "choices": [
+      "Diamond",
+      "Graphene",
+      "Nanotube",
+      "Neutron star material"
+    ],
+    "correctAnswer": "Neutron star material",
+    "category": "Science"
+  },
+  {
+    "id": "science39",
+    "question": "What is the study of stars and celestial bodies called?",
+    "choices": [
+      "Geology",
+      "Astronomy",
+      "Astrophysics",
+      "Cosmology"
+    ],
+    "correctAnswer": "Astronomy",
+    "category": "Science"
+  },
+  {
+    "id": "science40",
+    "question": "Which is the most abundant element in Earth's atmosphere?",
+    "choices": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correctAnswer": "Nitrogen",
+    "category": "Science"
+  },
+  {
+    "id": "science41",
+    "question": "What type of star is the Sun?",
+    "choices": [
+      "Red giant",
+      "White dwarf",
+      "Main-sequence",
+      "Neutron star"
+    ],
+    "correctAnswer": "Main-sequence",
+    "category": "Science"
+  },
+  {
+    "id": "science42",
+    "question": "Which part of the plant absorbs sunlight for photosynthesis?",
+    "choices": [
+      "Roots",
+      "Stem",
+      "Leaves",
+      "Flowers"
+    ],
+    "correctAnswer": "Leaves",
+    "category": "Science"
+  },
+  {
+    "id": "science43",
+    "question": "What is the speed of light in a vacuum?",
+    "choices": [
+      "3×10^6 meters per second",
+      "3×10^8 meters per second",
+      "3×10^9 meters per second",
+      "300 kilometers per second"
+    ],
+    "correctAnswer": "3×10^8 meters per second",
+    "category": "Science"
+  },
+  {
+    "id": "science44",
+    "question": "What is the name of the particle that has no charge?",
+    "choices": [
+      "Proton",
+      "Electron",
+      "Neutron",
+      "Photon"
+    ],
+    "correctAnswer": "Neutron",
+    "category": "Science"
+  },
+  {
+    "id": "science45",
+    "question": "What part of the cell contains the genetic material?",
+    "choices": [
+      "Cytoplasm",
+      "Nucleus",
+      "Ribosomes",
+      "Mitochondria"
+    ],
+    "correctAnswer": "Nucleus",
+    "category": "Science"
+  },
+  {
+    "id": "science46",
+    "question": "What is the most common metal in the Earth's crust?",
+    "choices": [
+      "Iron",
+      "Aluminum",
+      "Copper",
+      "Magnesium"
+    ],
+    "correctAnswer": "Aluminum",
+    "category": "Science"
+  },
+  {
+    "id": "science47",
+    "question": "What is the pH level of pure water?",
+    "choices": [
+      "5",
+      "7",
+      "9",
+      "10"
+    ],
+    "correctAnswer": "7",
+    "category": "Science"
+  },
+  {
+    "id": "science48",
+    "question": "What is the most abundant metal in the Earth's core?",
+    "choices": [
+      "Iron",
+      "Nickel",
+      "Gold",
+      "Copper"
+    ],
+    "correctAnswer": "Iron",
+    "category": "Science"
+  },
+  {
+    "id": "science49",
+    "question": "Which part of the eye controls the amount of light that enters?",
+    "choices": [
+      "Pupil",
+      "Lens",
+      "Cornea",
+      "Retina"
+    ],
+    "correctAnswer": "Pupil",
+    "category": "Science"
+  },
+  {
+    "id": "science50",
+    "question": "What gas do plants take in during photosynthesis?",
+    "choices": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "correctAnswer": "Carbon Dioxide",
+    "category": "Science"
+  },
+  {
+    "id": "politics1",
+    "question": "What is the term length for a U.S. President?",
+    "choices": [
+      "2 years",
+      "4 years",
+      "6 years",
+      "8 years"
+    ],
+    "correctAnswer": "4 years",
+    "category": "Politics"
+  },
+  {
+    "id": "politics2",
+    "question": "What is the name of the parliament in the United Kingdom?",
+    "choices": [
+      "Congress",
+      "National Assembly",
+      "Houses of Parliament",
+      "Bundestag"
+    ],
+    "correctAnswer": "Houses of Parliament",
+    "category": "Politics"
+  },
+  {
+    "id": "politics3",
+    "question": "How many branches of government are there in the United States?",
+    "choices": [
+      "Two",
+      "Three",
+      "Four",
+      "Five"
+    ],
+    "correctAnswer": "Three",
+    "category": "Politics"
+  },
+  {
+    "id": "politics4",
+    "question": "What is the minimum age requirement to become U.S. President?",
+    "choices": [
+      "30 years",
+      "35 years",
+      "40 years",
+      "45 years"
+    ],
+    "correctAnswer": "35 years",
+    "category": "Politics"
+  },
+  {
+    "id": "politics5",
+    "question": "What is the name of the European Union's executive branch?",
+    "choices": [
+      "European Parliament",
+      "European Commission",
+      "European Council",
+      "Council of Europe"
+    ],
+    "correctAnswer": "European Commission",
+    "category": "Politics"
+  },
+  {
+    "id": "politics6",
+    "question": "Which document begins with 'We the People'?",
+    "choices": [
+      "Declaration of Independence",
+      "Bill of Rights",
+      "U.S. Constitution",
+      "Emancipation Proclamation"
+    ],
+    "correctAnswer": "U.S. Constitution",
+    "category": "Politics"
+  },
+  {
+    "id": "politics7",
+    "question": "What is the term for a law passed by a parliament or congress?",
+    "choices": [
+      "Regulation",
+      "Statute",
+      "Ordinance",
+      "Decree"
+    ],
+    "correctAnswer": "Statute",
+    "category": "Politics"
+  },
+  {
+    "id": "politics8",
+    "question": "Who is the head of state in the United Kingdom?",
+    "choices": [
+      "Prime Minister",
+      "President",
+      "Monarch",
+      "Chancellor"
+    ],
+    "correctAnswer": "Monarch",
+    "category": "Politics"
+  },
+  {
+    "id": "politics9",
+    "question": "What is the capital of the European Union?",
+    "choices": [
+      "Paris",
+      "London",
+      "Brussels",
+      "Berlin"
+    ],
+    "correctAnswer": "Brussels",
+    "category": "Politics"
+  },
+  {
+    "id": "politics10",
+    "question": "How many electoral votes are needed to win the U.S. presidency?",
+    "choices": [
+      "218",
+      "270",
+      "300",
+      "435"
+    ],
+    "correctAnswer": "270",
+    "category": "Politics"
+  },
+  {
+    "id": "politics11",
+    "question": "What is the term length for a U.S. Senator?",
+    "choices": [
+      "2 years",
+      "4 years",
+      "6 years",
+      "8 years"
+    ],
+    "correctAnswer": "6 years",
+    "category": "Politics"
+  },
+  {
+    "id": "politics12",
+    "question": "Who has the power to declare war in the United States?",
+    "choices": [
+      "The President",
+      "Congress",
+      "The Supreme Court",
+      "The Pentagon"
+    ],
+    "correctAnswer": "Congress",
+    "category": "Politics"
+  },
+  {
+    "id": "politics13",
+    "question": "What is the name of the lower house of Congress?",
+    "choices": [
+      "Senate",
+      "House of Representatives",
+      "Parliament",
+      "Assembly"
+    ],
+    "correctAnswer": "House of Representatives",
+    "category": "Politics"
+  },
+  {
+    "id": "politics14",
+    "question": "How many justices are on the U.S. Supreme Court?",
+    "choices": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "correctAnswer": "9",
+    "category": "Politics"
+  },
+  {
+    "id": "politics15",
+    "question": "What is the term for a diplomatic representative of a country?",
+    "choices": [
+      "Senator",
+      "Ambassador",
+      "Governor",
+      "Minister"
+    ],
+    "correctAnswer": "Ambassador",
+    "category": "Politics"
+  },
+  {
+    "id": "politics16",
+    "question": "What is the official residence of the British Prime Minister?",
+    "choices": [
+      "10 Downing Street",
+      "Buckingham Palace",
+      "Westminster Palace",
+      "Windsor Castle"
+    ],
+    "correctAnswer": "10 Downing Street",
+    "category": "Politics"
+  },
+  {
+    "id": "politics17",
+    "question": "Who is the Commander in Chief of the U.S. military?",
+    "choices": [
+      "Secretary of Defense",
+      "Chairman of Joint Chiefs",
+      "The President",
+      "Congress"
+    ],
+    "correctAnswer": "The President",
+    "category": "Politics"
+  },
+  {
+    "id": "politics18",
+    "question": "What is the term for a temporary alliance between political parties?",
+    "choices": [
+      "Coalition",
+      "Confederation",
+      "Federation",
+      "Union"
+    ],
+    "correctAnswer": "Coalition",
+    "category": "Politics"
+  },
+  {
+    "id": "politics19",
+    "question": "What document protects the basic rights of European Union citizens?",
+    "choices": [
+      "European Constitution",
+      "Charter of Fundamental Rights",
+      "Treaty of Rome",
+      "Maastricht Treaty"
+    ],
+    "correctAnswer": "Charter of Fundamental Rights",
+    "category": "Politics"
+  },
+  {
+    "id": "politics20",
+    "question": "What is the minimum voting age in most democratic countries?",
+    "choices": [
+      "16",
+      "18",
+      "20",
+      "21"
+    ],
+    "correctAnswer": "18",
+    "category": "Politics"
+  },
+  {
+    "id": "politics21",
+    "question": "What is the term for a vote to remove an official from office?",
+    "choices": [
+      "Referendum",
+      "Recall",
+      "Impeachment",
+      "Resolution"
+    ],
+    "correctAnswer": "Impeachment",
+    "category": "Politics"
+  },
+  {
+    "id": "politics22",
+    "question": "What is the name of the French parliament?",
+    "choices": [
+      "National Assembly",
+      "Bundestag",
+      "Duma",
+      "Congress"
+    ],
+    "correctAnswer": "National Assembly",
+    "category": "Politics"
+  },
+  {
+    "id": "politics23",
+    "question": "How often are U.S. Presidential elections held?",
+    "choices": [
+      "Every 2 years",
+      "Every 4 years",
+      "Every 6 years",
+      "Every 8 years"
+    ],
+    "correctAnswer": "Every 4 years",
+    "category": "Politics"
+  },
+  {
+    "id": "politics24",
+    "question": "What is the term for a government by the people?",
+    "choices": [
+      "Monarchy",
+      "Democracy",
+      "Autocracy",
+      "Oligarchy"
+    ],
+    "correctAnswer": "Democracy",
+    "category": "Politics"
+  },
+  {
+    "id": "politics25",
+    "question": "Who is the head of the United Nations?",
+    "choices": [
+      "Secretary General",
+      "President",
+      "Prime Minister",
+      "Chancellor"
+    ],
+    "correctAnswer": "Secretary General",
+    "category": "Politics"
+  },
+  {
+    "id": "politics26",
+    "question": "What is the capital of the United States?",
+    "choices": [
+      "New York City",
+      "Washington, D.C.",
+      "Los Angeles",
+      "Chicago"
+    ],
+    "correctAnswer": "Washington, D.C.",
+    "category": "Politics"
+  },
+  {
+    "id": "politics27",
+    "question": "What is the name of Russia's parliament?",
+    "choices": [
+      "Duma",
+      "Assembly",
+      "Congress",
+      "Parliament"
+    ],
+    "correctAnswer": "Duma",
+    "category": "Politics"
+  },
+  {
+    "id": "politics28",
+    "question": "What is the term for a government ruled by a king or queen?",
+    "choices": [
+      "Democracy",
+      "Republic",
+      "Monarchy",
+      "Oligarchy"
+    ],
+    "correctAnswer": "Monarchy",
+    "category": "Politics"
+  },
+  {
+    "id": "politics29",
+    "question": "How many members are in the U.S. Senate?",
+    "choices": [
+      "50",
+      "100",
+      "435",
+      "538"
+    ],
+    "correctAnswer": "100",
+    "category": "Politics"
+  },
+  {
+    "id": "politics30",
+    "question": "What is the term for a public vote on a single political question?",
+    "choices": [
+      "Election",
+      "Referendum",
+      "Poll",
+      "Survey"
+    ],
+    "correctAnswer": "Referendum",
+    "category": "Politics"
+  },
+  {
+    "id": "politics31",
+    "question": "What type of government has absolute power in the hands of one person?",
+    "choices": [
+      "Democracy",
+      "Republic",
+      "Dictatorship",
+      "Monarchy"
+    ],
+    "correctAnswer": "Dictatorship",
+    "category": "Politics"
+  },
+  {
+    "id": "politics32",
+    "question": "What is the term for a government's highest-ranking diplomats?",
+    "choices": [
+      "Cabinet",
+      "Congress",
+      "Diplomatic Corps",
+      "Ministry"
+    ],
+    "correctAnswer": "Diplomatic Corps",
+    "category": "Politics"
+  },
+  {
+    "id": "politics33",
+    "question": "What is the main function of the judiciary?",
+    "choices": [
+      "Make laws",
+      "Enforce laws",
+      "Interpret laws",
+      "Propose laws"
+    ],
+    "correctAnswer": "Interpret laws",
+    "category": "Politics"
+  },
+  {
+    "id": "politics34",
+    "question": "What is the term for the head of a city government?",
+    "choices": [
+      "Governor",
+      "Mayor",
+      "President",
+      "Commissioner"
+    ],
+    "correctAnswer": "Mayor",
+    "category": "Politics"
+  },
+  {
+    "id": "politics35",
+    "question": "What is the minimum age to become a U.S. Senator?",
+    "choices": [
+      "25",
+      "30",
+      "35",
+      "40"
+    ],
+    "correctAnswer": "30",
+    "category": "Politics"
+  },
+  {
+    "id": "politics36",
+    "question": "What is the term for a person who supports traditional values?",
+    "choices": [
+      "Liberal",
+      "Conservative",
+      "Moderate",
+      "Independent"
+    ],
+    "correctAnswer": "Conservative",
+    "category": "Politics"
+  },
+  {
+    "id": "politics37",
+    "question": "What is the name of China's parliament?",
+    "choices": [
+      "National People's Congress",
+      "National Assembly",
+      "Parliament",
+      "Congress"
+    ],
+    "correctAnswer": "National People's Congress",
+    "category": "Politics"
+  },
+  {
+    "id": "politics38",
+    "question": "What is the term for the right to vote?",
+    "choices": [
+      "Suffrage",
+      "Liberty",
+      "Freedom",
+      "Democracy"
+    ],
+    "correctAnswer": "Suffrage",
+    "category": "Politics"
+  },
+  {
+    "id": "politics39",
+    "question": "What is the highest court in the European Union?",
+    "choices": [
+      "European Court of Justice",
+      "European Supreme Court",
+      "EU High Court",
+      "European Court of Rights"
+    ],
+    "correctAnswer": "European Court of Justice",
+    "category": "Politics"
+  },
+  {
+    "id": "politics40",
+    "question": "What is the term for a tax on imported goods?",
+    "choices": [
+      "Sales tax",
+      "Income tax",
+      "Tariff",
+      "Value-added tax"
+    ],
+    "correctAnswer": "Tariff",
+    "category": "Politics"
+  },
+  {
+    "id": "politics41",
+    "question": "What document established the United Nations?",
+    "choices": [
+      "UN Charter",
+      "Geneva Convention",
+      "Treaty of Versailles",
+      "Atlantic Charter"
+    ],
+    "correctAnswer": "UN Charter",
+    "category": "Politics"
+  },
+  {
+    "id": "politics42",
+    "question": "What is the term for a government's chief financial officer?",
+    "choices": [
+      "Treasurer",
+      "Accountant",
+      "Chancellor",
+      "Secretary"
+    ],
+    "correctAnswer": "Treasurer",
+    "category": "Politics"
+  },
+  {
+    "id": "politics43",
+    "question": "What is the name of Germany's parliament?",
+    "choices": [
+      "Bundestag",
+      "Reichstag",
+      "Congress",
+      "Assembly"
+    ],
+    "correctAnswer": "Bundestag",
+    "category": "Politics"
+  },
+  {
+    "id": "politics44",
+    "question": "What is the term for a person who seeks public office?",
+    "choices": [
+      "Politician",
+      "Candidate",
+      "Official",
+      "Representative"
+    ],
+    "correctAnswer": "Candidate",
+    "category": "Politics"
+  },
+  {
+    "id": "politics45",
+    "question": "What is the main purpose of political parties?",
+    "choices": [
+      "To raise money",
+      "To organize voters",
+      "To make laws",
+      "To enforce laws"
+    ],
+    "correctAnswer": "To organize voters",
+    "category": "Politics"
+  },
+  {
+    "id": "politics46",
+    "question": "What is the term for a formal agreement between countries?",
+    "choices": [
+      "Law",
+      "Treaty",
+      "Contract",
+      "Resolution"
+    ],
+    "correctAnswer": "Treaty",
+    "category": "Politics"
+  },
+  {
+    "id": "politics47",
+    "question": "What is the role of a political lobbyist?",
+    "choices": [
+      "Make laws",
+      "Influence legislation",
+      "Enforce laws",
+      "Judge laws"
+    ],
+    "correctAnswer": "Influence legislation",
+    "category": "Politics"
+  },
+  {
+    "id": "politics48",
+    "question": "What is the term for a government's foreign policy advisers?",
+    "choices": [
+      "Cabinet",
+      "Ministry",
+      "Department",
+      "Council"
+    ],
+    "correctAnswer": "Council",
+    "category": "Politics"
+  },
+  {
+    "id": "politics49",
+    "question": "What is the primary function of a constitution?",
+    "choices": [
+      "Define government structure",
+      "Collect taxes",
+      "Enforce laws",
+      "Conduct elections"
+    ],
+    "correctAnswer": "Define government structure",
+    "category": "Politics"
+  },
+  {
+    "id": "politics50",
+    "question": "What is the term for a political system with two dominant parties?",
+    "choices": [
+      "Monarchy",
+      "Democracy",
+      "Two-party system",
+      "Multi-party system"
+    ],
+    "correctAnswer": "Two-party system",
+    "category": "Politics"
+  },
+  {
+    "id": "sports1",
+    "question": "In which sport would you perform a slam dunk?",
+    "choices": [
+      "Football",
+      "Baseball",
+      "Basketball",
+      "Volleyball"
+    ],
+    "correctAnswer": "Basketball",
+    "category": "Sports"
+  },
+  {
+    "id": "sports2",
+    "question": "How many players are on a standard soccer team during a match?",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctAnswer": "11",
+    "category": "Sports"
+  },
+  {
+    "id": "sports3",
+    "question": "What country invented tennis?",
+    "choices": [
+      "England",
+      "France",
+      "Spain",
+      "United States"
+    ],
+    "correctAnswer": "France",
+    "category": "Sports"
+  },
+  {
+    "id": "sports4",
+    "question": "How many rings are on the Olympic flag?",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctAnswer": "5",
+    "category": "Sports"
+  },
+  {
+    "id": "sports5",
+    "question": "In what sport is a 'shuttlecock' used?",
+    "choices": [
+      "Tennis",
+      "Table Tennis",
+      "Badminton",
+      "Squash"
+    ],
+    "correctAnswer": "Badminton",
+    "category": "Sports"
+  },
+  {
+    "id": "sports6",
+    "question": "What is the diameter of a basketball hoop in inches?",
+    "choices": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "correctAnswer": "18",
+    "category": "Sports"
+  },
+  {
+    "id": "sports7",
+    "question": "Which country won the first FIFA World Cup in 1930?",
+    "choices": [
+      "Brazil",
+      "Argentina",
+      "Uruguay",
+      "Italy"
+    ],
+    "correctAnswer": "Uruguay",
+    "category": "Sports"
+  },
+  {
+    "id": "sports8",
+    "question": "How many points is a touchdown worth in American football?",
+    "choices": [
+      "3",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctAnswer": "6",
+    "category": "Sports"
+  },
+  {
+    "id": "sports9",
+    "question": "In which sport would you use a 'driver'?",
+    "choices": [
+      "Tennis",
+      "Golf",
+      "Cricket",
+      "Hockey"
+    ],
+    "correctAnswer": "Golf",
+    "category": "Sports"
+  },
+  {
+    "id": "sports10",
+    "question": "How many players are on a standard ice hockey team during play?",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctAnswer": "6",
+    "category": "Sports"
+  },
+  {
+    "id": "sports11",
+    "question": "What sport is associated with Wimbledon?",
+    "choices": [
+      "Golf",
+      "Cricket",
+      "Tennis",
+      "Badminton"
+    ],
+    "correctAnswer": "Tennis",
+    "category": "Sports"
+  },
+  {
+    "id": "sports12",
+    "question": "How many periods are there in an ice hockey game?",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "3",
+    "category": "Sports"
+  },
+  {
+    "id": "sports13",
+    "question": "In which sport would you perform a 'pirouette'?",
+    "choices": [
+      "Gymnastics",
+      "Figure Skating",
+      "Diving",
+      "Both A and B"
+    ],
+    "correctAnswer": "Both A and B",
+    "category": "Sports"
+  },
+  {
+    "id": "sports14",
+    "question": "What is the standard length of an Olympic swimming pool?",
+    "choices": [
+      "25 meters",
+      "50 meters",
+      "75 meters",
+      "100 meters"
+    ],
+    "correctAnswer": "50 meters",
+    "category": "Sports"
+  },
+  {
+    "id": "sports15",
+    "question": "Which country is credited with inventing basketball?",
+    "choices": [
+      "United States",
+      "Canada",
+      "England",
+      "France"
+    ],
+    "correctAnswer": "United States",
+    "category": "Sports"
+  },
+  {
+    "id": "sports16",
+    "question": "What is the maximum number of clubs allowed in a golf bag during a round?",
+    "choices": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "correctAnswer": "14",
+    "category": "Sports"
+  },
+  {
+    "id": "sports17",
+    "question": "In which sport would you perform a 'clean and jerk'?",
+    "choices": [
+      "Boxing",
+      "Wrestling",
+      "Weightlifting",
+      "Judo"
+    ],
+    "correctAnswer": "Weightlifting",
+    "category": "Sports"
+  },
+  {
+    "id": "sports18",
+    "question": "What is the name of the trophy awarded to the NHL champions?",
+    "choices": [
+      "Stanley Cup",
+      "Vince Lombardi Trophy",
+      "Larry O'Brien Trophy",
+      "Commissioner's Trophy"
+    ],
+    "correctAnswer": "Stanley Cup",
+    "category": "Sports"
+  },
+  {
+    "id": "sports19",
+    "question": "How many players are on a volleyball team on the court?",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctAnswer": "6",
+    "category": "Sports"
+  },
+  {
+    "id": "sports20",
+    "question": "What color is the middle Olympic ring?",
+    "choices": [
+      "Blue",
+      "Yellow",
+      "Black",
+      "Green"
+    ],
+    "correctAnswer": "Black",
+    "category": "Sports"
+  },
+  {
+    "id": "sports21",
+    "question": "In which sport might you use a 'sand wedge'?",
+    "choices": [
+      "Beach Volleyball",
+      "Golf",
+      "Tennis",
+      "Cricket"
+    ],
+    "correctAnswer": "Golf",
+    "category": "Sports"
+  },
+  {
+    "id": "sports22",
+    "question": "How many points is a field goal worth in American football?",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "3",
+    "category": "Sports"
+  },
+  {
+    "id": "sports23",
+    "question": "What is the diameter of a basketball?",
+    "choices": [
+      "9.4 inches",
+      "9.6 inches",
+      "9.8 inches",
+      "10 inches"
+    ],
+    "correctAnswer": "9.4 inches",
+    "category": "Sports"
+  },
+  {
+    "id": "sports24",
+    "question": "In which sport would you perform a 'double axel'?",
+    "choices": [
+      "Gymnastics",
+      "Figure Skating",
+      "Diving",
+      "Skiing"
+    ],
+    "correctAnswer": "Figure Skating",
+    "category": "Sports"
+  },
+  {
+    "id": "sports25",
+    "question": "How many players are on a cricket team?",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctAnswer": "11",
+    "category": "Sports"
+  },
+  {
+    "id": "sports26",
+    "question": "What is the term for a score of one over par in golf?",
+    "choices": [
+      "Bogey",
+      "Eagle",
+      "Birdie",
+      "Par"
+    ],
+    "correctAnswer": "Bogey",
+    "category": "Sports"
+  },
+  {
+    "id": "sports27",
+    "question": "Which country won the most Olympic medals in history?",
+    "choices": [
+      "Soviet Union",
+      "United States",
+      "China",
+      "Germany"
+    ],
+    "correctAnswer": "United States",
+    "category": "Sports"
+  },
+  {
+    "id": "sports28",
+    "question": "How many quarters are in a basketball game?",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "4",
+    "category": "Sports"
+  },
+  {
+    "id": "sports29",
+    "question": "What is the length of a marathon in miles?",
+    "choices": [
+      "24.2",
+      "25.2",
+      "26.2",
+      "27.2"
+    ],
+    "correctAnswer": "26.2",
+    "category": "Sports"
+  },
+  {
+    "id": "sports30",
+    "question": "In which sport would you perform a 'knockout'?",
+    "choices": [
+      "Wrestling",
+      "Boxing",
+      "Judo",
+      "Karate"
+    ],
+    "correctAnswer": "Boxing",
+    "category": "Sports"
+  },
+  {
+    "id": "sports31",
+    "question": "What is the height of a basketball hoop in feet?",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correctAnswer": "10",
+    "category": "Sports"
+  },
+  {
+    "id": "sports32",
+    "question": "Which sport uses the term 'love'?",
+    "choices": [
+      "Badminton",
+      "Tennis",
+      "Table Tennis",
+      "Squash"
+    ],
+    "correctAnswer": "Tennis",
+    "category": "Sports"
+  },
+  {
+    "id": "sports33",
+    "question": "How many players are on a baseball team on the field?",
+    "choices": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correctAnswer": "9",
+    "category": "Sports"
+  },
+  {
+    "id": "sports34",
+    "question": "What color are the goalposts in football?",
+    "choices": [
+      "Black",
+      "White",
+      "Yellow",
+      "Orange"
+    ],
+    "correctAnswer": "Yellow",
+    "category": "Sports"
+  },
+  {
+    "id": "sports35",
+    "question": "In which sport would you perform a 'hat-trick'?",
+    "choices": [
+      "Soccer",
+      "Cricket",
+      "Hockey",
+      "All of the above"
+    ],
+    "correctAnswer": "All of the above",
+    "category": "Sports"
+  },
+  {
+    "id": "sports36",
+    "question": "How many holes are played in a standard round of golf?",
+    "choices": [
+      "9",
+      "12",
+      "15",
+      "18"
+    ],
+    "correctAnswer": "18",
+    "category": "Sports"
+  },
+  {
+    "id": "sports37",
+    "question": "What is the name of the highest governing body of soccer?",
+    "choices": [
+      "UEFA",
+      "FIFA",
+      "CONCACAF",
+      "AFC"
+    ],
+    "correctAnswer": "FIFA",
+    "category": "Sports"
+  },
+  {
+    "id": "sports38",
+    "question": "How many players are on a rugby union team during play?",
+    "choices": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "correctAnswer": "15",
+    "category": "Sports"
+  },
+  {
+    "id": "sports39",
+    "question": "What is the term for a perfect score in bowling?",
+    "choices": [
+      "200",
+      "250",
+      "300",
+      "350"
+    ],
+    "correctAnswer": "300",
+    "category": "Sports"
+  },
+  {
+    "id": "sports40",
+    "question": "In which sport would you perform a 'smash'?",
+    "choices": [
+      "Tennis",
+      "Badminton",
+      "Volleyball",
+      "All of the above"
+    ],
+    "correctAnswer": "All of the above",
+    "category": "Sports"
+  },
+  {
+    "id": "sports41",
+    "question": "How many minutes is a standard soccer match?",
+    "choices": [
+      "45",
+      "60",
+      "90",
+      "120"
+    ],
+    "correctAnswer": "90",
+    "category": "Sports"
+  },
+  {
+    "id": "sports42",
+    "question": "What is the term for scoring three consecutive strikes in bowling?",
+    "choices": [
+      "Triple",
+      "Turkey",
+      "Strike Out",
+      "Hat Trick"
+    ],
+    "correctAnswer": "Turkey",
+    "category": "Sports"
+  },
+  {
+    "id": "sports43",
+    "question": "In which sport would you find a 'free throw line'?",
+    "choices": [
+      "Soccer",
+      "Basketball",
+      "Volleyball",
+      "Tennis"
+    ],
+    "correctAnswer": "Basketball",
+    "category": "Sports"
+  },
+  {
+    "id": "sports44",
+    "question": "How many points is a try worth in rugby union?",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctAnswer": "5",
+    "category": "Sports"
+  },
+  {
+    "id": "sports45",
+    "question": "What is the name of the line that divides a tennis court in half?",
+    "choices": [
+      "Center line",
+      "Net line",
+      "Service line",
+      "Base line"
+    ],
+    "correctAnswer": "Service line",
+    "category": "Sports"
+  },
+  {
+    "id": "sports46",
+    "question": "How many games are in a standard MLB season?",
+    "choices": [
+      "142",
+      "152",
+      "162",
+      "172"
+    ],
+    "correctAnswer": "162",
+    "category": "Sports"
+  },
+  {
+    "id": "sports47",
+    "question": "What is the distance of an Olympic marathon in kilometers?",
+    "choices": [
+      "40.2",
+      "42.2",
+      "44.2",
+      "46.2"
+    ],
+    "correctAnswer": "42.2",
+    "category": "Sports"
+  },
+  {
+    "id": "sports48",
+    "question": "In which sport would you perform a 'spike'?",
+    "choices": [
+      "Basketball",
+      "Tennis",
+      "Volleyball",
+      "Baseball"
+    ],
+    "correctAnswer": "Volleyball",
+    "category": "Sports"
+  },
+  {
+    "id": "sports49",
+    "question": "How many referees are on the court in a standard NBA game?",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "3",
+    "category": "Sports"
+  },
+  {
+    "id": "sports50",
+    "question": "What is the term for a score of zero in tennis?",
+    "choices": [
+      "Zero",
+      "Nil",
+      "Love",
+      "None"
+    ],
+    "correctAnswer": "Love",
+    "category": "Sports"
   }
 ]

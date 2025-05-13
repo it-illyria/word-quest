@@ -18,7 +18,7 @@ const QuestionCard: React.FC<Props> = ({
                                        }) => {
     return (
         <motion.div
-            className="question-card" // Using global CSS class
+            className="question-card"
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.3}}
@@ -34,16 +34,11 @@ const QuestionCard: React.FC<Props> = ({
                     const isSelected = selected === choice;
                     const isDisabled = !!selected;
 
-                    // Determine button class based on state
                     let buttonClass = "choice-button";
                     if (selected) {
-                        if (isCorrect) {
-                            buttonClass += " correct-choice";
-                        } else if (isSelected) {
-                            buttonClass += " incorrect-choice";
-                        } else {
-                            buttonClass += " neutral-choice";
-                        }
+                        if (isCorrect) buttonClass += " correct-choice";
+                        else if (isSelected) buttonClass += " incorrect-choice";
+                        else buttonClass += " neutral-choice";
                     }
 
                     return (
