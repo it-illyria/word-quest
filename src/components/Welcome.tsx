@@ -25,10 +25,8 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect }) => {
     const [playHover] = useSound('/sounds/hover.mp3');
 
     const handleCategorySelect = (category: string) => {
-        if (category === "Vocabulary" && onCategorySelect) {
-            onCategorySelect(category, 'normal');
-        } else if (onCategorySelect) {
-            onCategorySelect(category);
+        if (onCategorySelect) {
+            onCategorySelect(category); // Treat Vocabulary like other categories
         }
     };
 
