@@ -383,8 +383,6 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                         disabled={!!winner || currentPlayer === "O"}
                     >
                         <option value="classic">Classic (3x3)</option>
-                        <option value="ultimate">Ultimate (9x9)</option>
-                        <option value="five-in-row">5-in-a-Row</option>
                     </select>
                 </div>
             </div>

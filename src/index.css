@@ -1355,7 +1355,6 @@ canvas {
 }
 
 /* Tic Tac Toe Styles */
-/* Tic Tac Toe Styles - Consolidated and Optimized */
 .tictactoe-container {
     max-width: 800px;
     margin: 0 auto;
@@ -1843,6 +1842,59 @@ canvas {
     }
 }
 
+
+
+/* Ultimate 9x9 Board */
+.ultimate-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.small-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 5px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.ultimate-board .square {
+    height: 40px;
+    font-size: 1.2rem;
+    margin: 1px;
+}
+
+/* 5-in-a-row Board */
+.five-in-row-board {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 2px;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.five-in-row-board .square {
+    height: 30px;
+    font-size: 1rem;
+}
+
+/* Classic Board */
+.classic-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.classic-board .square {
+    height: 100px;
+    font-size: 3rem;
+}
 /*------------------------------------------------ Dark Mode  ------------------------------------------------*/
 @media (prefers-color-scheme: dark) {
     .welcome-container {
