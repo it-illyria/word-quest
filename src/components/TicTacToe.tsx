@@ -41,6 +41,12 @@ interface PlayerProfile {
     losses: number;
 }
 
+interface TournamentScores {
+    playerWins: number;
+    computerWins: number;
+    draws: number;
+}
+
 const TicTacToe = ({ onBack }: { onBack: () => void }) => {
     const { width, height } = useWindowSize();
     const [board, setBoard] = useState<BoardState>(Array(9).fill(null));
@@ -56,19 +62,25 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         losses: 0,
         draws: 0,
         currentStreak: 0,
-        maxStreak: 0
+        maxStreak: 0,
     });
     const [playerProfile, setPlayerProfile] = useState<PlayerProfile>({
         name: "Player",
         avatar: "👤",
         wins: 0,
-        losses: 0
+        losses: 0,
     });
     const [showHistory, setShowHistory] = useState(false);
     const [isReplaying, setIsReplaying] = useState(false);
     const [tournamentMode, setTournamentMode] = useState(false);
     const [rounds, setRounds] = useState(5);
     const [currentRound, setCurrentRound] = useState(1);
+    const [tournamentScores, setTournamentScores] = useState<TournamentScores>({
+        playerWins: 0,
+        computerWins: 0,
+        draws: 0,
+    });
+    const [showTournamentResult, setShowTournamentResult] = useState(false);
 
     // Sound effects
     const [playMove] = useSound("/sounds/move.mp3");
@@ -81,7 +93,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         classic: { X: "X", O: "O" },
         emoji: { X: "❌", O: "⭕" },
         shapes: { X: "△", O: "◯" },
-        animals: { X: "🐯", O: "🐻" }
+        animals: { X: "🐯", O: "🐻" },
     };
 
     // Load saved data from localStorage
@@ -107,7 +119,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         const lines = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
             [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-            [0, 4, 8], [2, 4, 6]             // diagonals
+            [0, 4, 8], [2, 4, 6], // diagonals
         ];
 
         for (const [a, b, c] of lines) {
@@ -115,11 +127,15 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                 return board[a] as Player;
             }
         }
-        return board.every(cell => cell) ? "draw" : null;
+        return board.every((cell) => cell) ? "draw" : null;
     };
 
     // Minimax algorithm
-    const minimax = (board: BoardState, depth: number, isMaximizing: boolean): number => {
+    const minimax = (
+        board: BoardState,
+        depth: number,
+        isMaximizing: boolean
+    ): number => {
         const result = checkWinner(board);
         if (result !== null) {
             if (result === "X") return -10 + depth;
@@ -184,7 +200,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
     const getRandomMove = (board: BoardState): number => {
         const emptyIndices = board
             .map((cell, index) => (cell === null ? index : null))
-            .filter(val => val !== null) as number[];
+            .filter((val) => val !== null) as number[];
         return emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
     };
 
@@ -208,14 +224,17 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         if (gameWinner) {
             const result = gameWinner === "draw" ? "draw" : gameWinner;
             const newRecord: GameRecord = {
-                boardStates: [...gameHistory[gameHistory.length - 1]?.boardStates || [], newBoard],
-                moves: [...gameHistory[gameHistory.length - 1]?.moves || [], index],
+                boardStates: [
+                    ...(gameHistory[gameHistory.length - 1]?.boardStates || []),
+                    newBoard,
+                ],
+                moves: [...(gameHistory[gameHistory.length - 1]?.moves || []), index],
                 result,
                 date: new Date().toISOString(),
-                difficulty
+                difficulty,
             };
 
-            setGameHistory(prev => [...prev, newRecord]);
+            setGameHistory((prev) => [...prev, newRecord]);
             updateStats(result);
 
             if (result !== "draw") playWin();
@@ -229,7 +248,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
     };
 
     const updateStats = (result: GameResult) => {
-        setStats(prev => {
+        setStats((prev) => {
             const isWin = result === "X";
             const isDraw = result === "draw";
             const newStreak = isWin ? prev.currentStreak + 1 : 0;
@@ -241,14 +260,14 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                 draws: isDraw ? prev.draws + 1 : prev.draws,
                 currentStreak: newStreak,
                 maxStreak: Math.max(newStreak, prev.maxStreak),
-                lastPlayed: new Date().toISOString()
+                lastPlayed: new Date().toISOString(),
             };
         });
 
         if (result === "X") {
-            setPlayerProfile(prev => ({ ...prev, wins: prev.wins + 1 }));
+            setPlayerProfile((prev) => ({ ...prev, wins: prev.wins + 1 }));
         } else if (result === "O") {
-            setPlayerProfile(prev => ({ ...prev, losses: prev.losses + 1 }));
+            setPlayerProfile((prev) => ({ ...prev, losses: prev.losses + 1 }));
         }
     };
 
@@ -265,17 +284,16 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
             losses: 0,
             draws: 0,
             currentStreak: 0,
-            maxStreak: 0
+            maxStreak: 0,
         });
         setGameHistory([]);
-        setPlayerProfile(prev => ({ ...prev, wins: 0, losses: 0 }));
+        setPlayerProfile((prev) => ({ ...prev, wins: 0, losses: 0 }));
     };
 
     const replayGame = (game: GameRecord) => {
         setIsReplaying(true);
         resetGame();
 
-        // Show each move with delay
         game.moves.forEach((move, i) => {
             setTimeout(() => {
                 const newBoard = [...board];
@@ -291,6 +309,54 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         });
     };
 
+    const handleTournamentToggle = () => {
+        playClick();
+        if (!tournamentMode) {
+            // Starting new tournament
+            setTournamentMode(true);
+            setCurrentRound(1);
+            setTournamentScores({ playerWins: 0, computerWins: 0, draws: 0 });
+            resetGame();
+        } else {
+            // Ending tournament early
+            setTournamentMode(false);
+        }
+    };
+
+    // Handle tournament progression
+    useEffect(() => {
+        if (tournamentMode && winner) {
+            // Update tournament scores based on game result
+            if (winner === "X") {
+                setTournamentScores((prev) => ({
+                    ...prev,
+                    playerWins: prev.playerWins + 1,
+                }));
+            } else if (winner === "O") {
+                setTournamentScores((prev) => ({
+                    ...prev,
+                    computerWins: prev.computerWins + 1,
+                }));
+            } else if (winner === "draw") {
+                setTournamentScores((prev) => ({ ...prev, draws: prev.draws + 1 }));
+            }
+
+            // Check if tournament is over
+            if (currentRound >= rounds) {
+                setTimeout(() => {
+                    setShowTournamentResult(true);
+                }, 1000);
+            } else {
+                // Proceed to next round
+                setTimeout(() => {
+                    setCurrentRound((prev) => prev + 1);
+                    resetGame();
+                }, 1500);
+            }
+        }
+    }, [winner, tournamentMode, currentRound, rounds]);
+
+    // Computer move logic
     useEffect(() => {
         if (currentPlayer === "O" && !winner && !isReplaying) {
             makeComputerMove();
@@ -389,11 +455,20 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
 
             {tournamentMode && (
                 <div className="tournament-info">
-                    <div className="tournament-round">Round {currentRound} of {rounds}</div>
+                    <div className="tournament-round">
+                        Round {currentRound} of {rounds}
+                    </div>
+                    <div className="tournament-scores">
+                        <span>You: {tournamentScores.playerWins}</span>
+                        <span>Computer: {tournamentScores.computerWins}</span>
+                        <span>Draws: {tournamentScores.draws}</span>
+                    </div>
                     <div className="tournament-progress">
                         <div
                             className="progress-bar"
-                            style={{ width: `${(currentRound / rounds) * 100}%` }}
+                            style={{
+                                width: `${((currentRound - 1 + (winner ? 1 : 0)) / rounds * 100)}%`,
+                            }}
                         ></div>
                     </div>
                 </div>
@@ -405,8 +480,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                         ? winner === "draw"
                             ? "Game ended in a draw!"
                             : `Winner: ${winner === "X" ? "You! 🎉" : "Computer 🤖"}`
-                        : `Current turn: ${currentPlayer === "X" ? "Your turn" : "Computer thinking..."}`
-                    }
+                        : `Current turn: ${currentPlayer === "X" ? "Your turn" : "Computer thinking..."}`}
                 </div>
 
                 <div className="score-display">
@@ -430,7 +504,8 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                     <span className="stat-value">
             {stats.totalGames > 0
                 ? Math.round((stats.wins / stats.totalGames) * 100)
-                : 0}%
+                : 0}
+                        %
           </span>
                 </div>
             </div>
@@ -443,20 +518,20 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                 transition={{
                     type: "spring",
                     delay: 0.2,
-                    staggerChildren: 0.05
+                    staggerChildren: 0.05,
                 }}
             >
                 {board.map((cell, index) => (
-                    <motion.div
-                        key={index}
-                        layout
-                        transition={{ type: "spring" }}
-                    >
+                    <motion.div key={index} layout transition={{ type: "spring" }}>
                         <motion.button
                             className={`square ${cell ? `filled-${cell.toLowerCase()}` : ""}`}
                             onClick={() => handleMove(index)}
-                            disabled={!!cell || !!winner || currentPlayer !== "X" || isReplaying}
-                            whileHover={{ scale: cell || winner || currentPlayer !== "X" ? 1 : 1.1 }}
+                            disabled={
+                                !!cell || !!winner || currentPlayer !== "X" || isReplaying
+                            }
+                            whileHover={{
+                                scale: cell || winner || currentPlayer !== "X" ? 1 : 1.1,
+                            }}
                             initial={{ scale: 0.9 }}
                             animate={{ scale: 1 }}
                             transition={{ type: "spring", delay: index * 0.05 }}
@@ -497,11 +572,11 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
 
                 <motion.button
                     className="action-button tournament-button"
-                    onClick={() => setTournamentMode(!tournamentMode)}
+                    onClick={handleTournamentToggle}
                     whileHover={{ scale: 1.05 }}
                     onHoverStart={() => playClick()}
                 >
-                    {tournamentMode ? "Exit Tournament" : "Start Tournament"}
+                    {tournamentMode ? "Exit Tournament" : "Start Tournament (Best of 5)"}
                 </motion.button>
             </div>
 
@@ -517,38 +592,97 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                         <p>No games played yet</p>
                     ) : (
                         <div className="history-list">
-                            {gameHistory.slice().reverse().map((game, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    className="history-item"
-                                    whileHover={{ backgroundColor: "#f5f5f5" }}
-                                >
-                                    <div className="history-info">
-                                        <span>Game {gameHistory.length - idx}</span>
-                                        <span>{new Date(game.date).toLocaleString()}</span>
-                                        <span className={`result-${game.result}`}>
-                      {game.result === "draw" ? "Draw" : `Winner: ${game.result}`}
-                    </span>
-                                        <span>Difficulty: {game.difficulty}</span>
-                                        <div className="mini-board-preview">
-                                            {game.boardStates[game.boardStates.length - 1].map((cell, i) => (
-                                                <div key={i} className={`mini-cell ${cell ? `filled-${cell.toLowerCase()}` : ''}`}>
-                                                    {cell ? themeConfigs[theme][cell] : ''}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <button
-                                        className="replay-button"
-                                        onClick={() => replayGame(game)}
-                                        disabled={isReplaying}
+                            {gameHistory
+                                .slice()
+                                .reverse()
+                                .map((game, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        className="history-item"
+                                        whileHover={{ backgroundColor: "#f5f5f5" }}
                                     >
-                                        Replay
-                                    </button>
-                                </motion.div>
-                            ))}
+                                        <div className="history-info">
+                                            <span>Game {gameHistory.length - idx}</span>
+                                            <span>{new Date(game.date).toLocaleString()}</span>
+                                            <span className={`result-${game.result}`}>
+                        {game.result === "draw" ? "Draw" : `Winner: ${game.result}`}
+                      </span>
+                                            <span>Difficulty: {game.difficulty}</span>
+                                            <div className="mini-board-preview">
+                                                {game.boardStates[game.boardStates.length - 1].map(
+                                                    (cell, i) => (
+                                                        <div
+                                                            key={i}
+                                                            className={`mini-cell ${
+                                                                cell ? `filled-${cell.toLowerCase()}` : ""
+                                                            }`}
+                                                        >
+                                                            {cell ? themeConfigs[theme][cell] : ""}
+                                                        </div>
+                                                    )
+                                                )}
+                                            </div>
+                                        </div>
+                                        <button
+                                            className="replay-button"
+                                            onClick={() => replayGame(game)}
+                                            disabled={isReplaying}
+                                        >
+                                            Replay
+                                        </button>
+                                    </motion.div>
+                                ))}
                         </div>
                     )}
+                </motion.div>
+            )}
+
+            {showTournamentResult && (
+                <motion.div
+                    className="tournament-result-modal"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                >
+                    <div className="tournament-result-content">
+                        <h2>Tournament Results</h2>
+                        <div className="result-stats">
+                            <div className="result-stat">
+                                <span className="stat-label">Your Wins:</span>
+                                <span className="stat-value">{tournamentScores.playerWins}</span>
+                            </div>
+                            <div className="result-stat">
+                                <span className="stat-label">Computer Wins:</span>
+                                <span className="stat-value">
+                  {tournamentScores.computerWins}
+                </span>
+                            </div>
+                            <div className="result-stat">
+                                <span className="stat-label">Draws:</span>
+                                <span className="stat-value">{tournamentScores.draws}</span>
+                            </div>
+                        </div>
+                        <div className="tournament-final-result">
+                            {tournamentScores.playerWins > tournamentScores.computerWins ? (
+                                <>
+                                    <h3 className="win-text">You Won the Tournament! 🎉</h3>
+                                    <Confetti width={width} height={height} recycle={false} />
+                                </>
+                            ) : tournamentScores.playerWins < tournamentScores.computerWins ? (
+                                <h3 className="lose-text">Computer Won the Tournament 🤖</h3>
+                            ) : (
+                                <h3 className="draw-text">Tournament Ended in a Draw!</h3>
+                            )}
+                        </div>
+                        <button
+                            className="close-result-button"
+                            onClick={() => {
+                                setShowTournamentResult(false);
+                                setTournamentMode(false);
+                            }}
+                        >
+                            Close
+                        </button>
+                    </div>
                 </motion.div>
             )}
         </motion.div>
