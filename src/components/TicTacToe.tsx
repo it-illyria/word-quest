@@ -73,7 +73,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
     const [showHistory, setShowHistory] = useState(false);
     const [isReplaying, setIsReplaying] = useState(false);
     const [tournamentMode, setTournamentMode] = useState(false);
-    const [rounds, setRounds] = useState(5);
+    const [rounds] = useState(5);
     const [currentRound, setCurrentRound] = useState(1);
     const [tournamentScores, setTournamentScores] = useState<TournamentScores>({
         playerWins: 0,
@@ -114,7 +114,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         localStorage.setItem("tictactoe_profile", JSON.stringify(playerProfile));
     }, [stats, gameHistory, playerProfile]);
 
-    // Check for winner
+    // Check for the winner
     const checkWinner = (board: BoardState): Player | "draw" | null => {
         const lines = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -276,20 +276,6 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         setCurrentPlayer("X");
         setWinner(null);
     };
-
-    const resetStats = () => {
-        setStats({
-            totalGames: 0,
-            wins: 0,
-            losses: 0,
-            draws: 0,
-            currentStreak: 0,
-            maxStreak: 0,
-        });
-        setGameHistory([]);
-        setPlayerProfile((prev) => ({ ...prev, wins: 0, losses: 0 }));
-    };
-
     const replayGame = (game: GameRecord) => {
         setIsReplaying(true);
         resetGame();
@@ -312,7 +298,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
     const handleTournamentToggle = () => {
         playClick();
         if (!tournamentMode) {
-            // Starting new tournament
+            // Starting a new tournament
             setTournamentMode(true);
             setCurrentRound(1);
             setTournamentScores({ playerWins: 0, computerWins: 0, draws: 0 });
@@ -326,7 +312,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
     // Handle tournament progression
     useEffect(() => {
         if (tournamentMode && winner) {
-            // Update tournament scores based on game result
+            // Update tournament scores based on a game result
             if (winner === "X") {
                 setTournamentScores((prev) => ({
                     ...prev,
@@ -341,13 +327,13 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
                 setTournamentScores((prev) => ({ ...prev, draws: prev.draws + 1 }));
             }
 
-            // Check if tournament is over
+            // Check if the tournament is over
             if (currentRound >= rounds) {
                 setTimeout(() => {
                     setShowTournamentResult(true);
                 }, 1000);
             } else {
-                // Proceed to next round
+                // Proceed to the next round
                 setTimeout(() => {
                     setCurrentRound((prev) => prev + 1);
                     resetGame();
@@ -361,7 +347,7 @@ const TicTacToe = ({ onBack }: { onBack: () => void }) => {
         if (currentPlayer === "O" && !winner && !isReplaying) {
             makeComputerMove();
         }
-    }, [currentPlayer, winner]);
+    }, [currentPlayer, winner, isReplaying]);
 
     return (
         <motion.div

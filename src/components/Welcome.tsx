@@ -19,6 +19,7 @@ const quizCategories = [
 ];
 
 const WelcomeScreen: React.FC<Props> = ({onCategorySelect, onBack, onNavigateTo}) => {
+    const [playHover] = useSound('/sounds/hover.mp3');
     const [playSelect] = useSound('/sounds/select.mp3');
 
     const handleCategorySelect = (category: string) => {
