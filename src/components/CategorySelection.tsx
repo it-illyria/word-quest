@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getAvailableCategories, getDisplayCategory } from '../utils/categories';
 import Quiz from './Quiz';
+import { QuizResult } from '../services/type';
 
 const CategorySelector: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('art');
@@ -22,8 +23,9 @@ const CategorySelector: React.FC = () => {
             <Quiz
                 category={selectedCategory}
                 difficulty={selectedDifficulty}
-                onExit={handleExitQuiz}
-            />
+                onExit={handleExitQuiz} updateProgress={function (result: QuizResult): void {
+                throw new Error('Function not implemented.');
+            }}            />
         );
     }
 

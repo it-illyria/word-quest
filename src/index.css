@@ -1999,6 +1999,222 @@ canvas {
     height: 100px;
     font-size: 3rem;
 }
+
+.badges-container {
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #0f172a, #1e293b); /* from-slate-900 to-slate-700 */
+    color: #f1f5f9; /* text-slate-100 */
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.back-button {
+    margin-bottom: 1.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: #4f46e5; /* indigo-600 */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #4338ca; /* indigo-700 */
+}
+
+.badges-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badges-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #fbbf24, #f97316); /* from-amber-400 to-orange-500 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badges-card {
+    background-color: #1e293b; /* slate-800 */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.badges-description {
+    font-size: 1.25rem;
+    color: #cbd5e1; /* slate-300 */
+    margin-bottom: 1.5rem;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.badge-item {
+    background-color: #334155; /* slate-700 */
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.badge-item:hover {
+    opacity: 1;
+}
+
+.badge-icon {
+    font-size: 2.5rem;
+    color: #64748b; /* slate-500 */
+    margin-bottom: 0.5rem;
+}
+
+.badge-name {
+    font-size: 0.875rem;
+    color: #94a3b8; /* slate-400 */
+}
+
+.badge-status {
+    font-size: 0.75rem;
+    color: #64748b; /* slate-500 */
+    margin-top: 0.25rem;
+}
+
+.badges-footer {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: #64748b; /* slate-500 */
+}
+
+.progress-container {
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #0f172a, #1e293b); /* slate-900 to slate-800 */
+    color: #f1f5f9;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Dashboard heading */
+.progress-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #d946ef, #8b5cf6); /* pink to violet */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* Grid layout for dashboard cards */
+.dashboard-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card container */
+.dashboard-card {
+    background-color: #1e293b;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Section headers */
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Colored section headings */
+.title-indigo { color: #818cf8; }  /* Overall */
+.title-purple { color: #c084fc; }  /* Mastery */
+.title-cyan   { color: #22d3ee; }  /* History */
+
+/* Performance entries */
+.performance-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.3rem;
+}
+
+.performance-item:last-child {
+    border-bottom: none;
+}
+
+/* Accuracy red if 0% */
+.stat-red {
+    color: #f87171;
+}
+
+/* Category / history fallback */
+.empty-text {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+
+.badges-header-compact {
+    position: sticky;
+    top: 0;
+    background: #0f172a;
+    padding: 1rem;
+    z-index: 10;
+    border-bottom: 1px solid #334155;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.badges-header-compact .back-button {
+    padding: 0.5rem;
+    min-width: 40px;
+    min-height: 40px;
+    display: grid;
+    place-items: center;
+}
+
+
 /*------------------------------------------------ Dark Mode  ------------------------------------------------*/
 @media (prefers-color-scheme: dark) {
     .welcome-container {

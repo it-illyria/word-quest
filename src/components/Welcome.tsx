@@ -6,6 +6,7 @@ import useSound from "use-sound";
 interface Props {
     onCategorySelect: (category: string) => void;
     onBack: () => void;
+    onNavigateTo: (view: string) => void;
 }
 
 const quizCategories = [
@@ -14,15 +15,10 @@ const quizCategories = [
     { emoji: "🔬", name: "Science", description: "Explore scientific wonders" },
     { emoji: "🗳️", name: "Politics", description: "Political systems and events" },
     { emoji: "⚽", name: "Sports", description: "Sports trivia challenge" },
-    {
-        emoji: "📚",
-        name: "Vocabulary",
-        description: "Expand your word power",
-        special: true
-    },
+    { emoji: "📚", name: "Vocabulary", description: "Expand your word power", special: true }
 ];
 
-const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack }) => {
+const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack, onNavigateTo }) => {
     const [playHover] = useSound('/sounds/hover.mp3');
     const [playSelect] = useSound('/sounds/select.mp3');
 
@@ -38,18 +34,11 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack }) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
         >
-            {/* Back Button */}
-            <motion.button
-                className="back-button"
-                onClick={onBack}
-                whileHover={{ scale: 1.05 }}
-                onHoverStart={() => playHover()}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-            >
-                ← Back to Home
-            </motion.button>
+
+                    <button onClick={onBack} className="back-button">
+                        ← Home
+                    </button>
+
 
             <motion.div
                 className="welcome-content"
@@ -57,33 +46,11 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack }) => {
                 animate={{ y: 0, scale: 1 }}
                 transition={{ type: "spring", stiffness: 100, damping: 10 }}
             >
-                <motion.div
-                    className="floating-brain"
-                    animate={{
-                        y: [0, -15, 0],
-                        rotate: [0, 5, -5, 0],
-                    }}
-                    transition={{
-                        y: {
-                            duration: 4,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        },
-                        rotate: {
-                            duration: 8,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        },
-                    }}
-                >
+                <motion.div className="floating-brain">
                     🧠
                 </motion.div>
 
-                <motion.h1
-                    className="welcome-title"
-                    whileHover={{ scale: 1.02 }}
-                    onHoverStart={() => playHover()}
-                >
+                <motion.h1 className="welcome-title">
                     Quiz Explorer
                 </motion.h1>
 
@@ -91,21 +58,11 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack }) => {
                     Choose your challenge
                 </motion.p>
 
-                <motion.div
-                    className="category-grid"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                >
+                <motion.div className="category-grid">
                     {quizCategories.map((category, i) => (
                         <motion.div
                             key={category.name}
                             className={`category-card ${category.special ? 'special-card' : ''}`}
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.4 + i * 0.1 }}
-                            whileHover={{ scale: category.special ? 1.05 : 1.03 }}
-                            onHoverStart={() => playHover()}
                             onClick={() => handleCategorySelect(category.name)}
                         >
                             <div className="category-emoji">{category.emoji}</div>
@@ -116,27 +73,19 @@ const WelcomeScreen: React.FC<Props> = ({ onCategorySelect, onBack }) => {
                 </motion.div>
             </motion.div>
 
-            <motion.div
-                className="feature-grid"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-            >
-                {["✨ Multiple Categories", "🏆 Earn Badges", "📊 Track Progress"].map(
-                    (feature, i) => (
-                        <motion.div
-                            key={feature}
-                            className="feature-card"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.6 + i * 0.1 }}
-                            whileHover={{ y: -5 }}
-                            onHoverStart={() => playHover()}
-                        >
-                            {feature}
-                        </motion.div>
-                    )
-                )}
+            <motion.div className="feature-grid">
+                {[
+                    { label: "🏆 Earn Badges", action: () => onNavigateTo('badges') },
+                    { label: "📊 Track Progress", action: () => onNavigateTo('progress') }
+                ].map((feature) => (
+                    <motion.div
+                        key={feature.label}
+                        className="feature-card"
+                        onClick={feature.action}
+                    >
+                        {feature.label}
+                    </motion.div>
+                ))}
             </motion.div>
         </motion.div>
     );

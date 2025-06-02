@@ -49,7 +49,7 @@ cd word-quest
 ## 🔧 Folder Structure
 
 ```json
-src/
+"src/"
 ├── components/        # UI components like Quiz, QuestionCard, ResultPanel
 ├   ├── animations/
 ├   ├   ├──index.ts
@@ -62,8 +62,12 @@ src/
 ├   ├── Quiz.tsx
 ├   ├── Result.tsx
 ├   ├── StreakCounter.tsx
+├   ├── CategorySelection.tsx
+├   ├── Difficulty.tsx
+├   ├── HomePage.tsx
 ├   ├── Welcome.tsx
-├── components/        # Fake Backend
+├   ├── TicTacToe.tsx
+├── data/        # Fake Backend
 ├   ├── questions.json
 ├── Services/        # Project Services
 ├   ├── animations.ts
@@ -76,6 +80,8 @@ src/
 ├── App.js            # Root component
 └── index.js           # Entry point
 └── index.css           # Styling of the project
+├── utils/        # Project Utils
+├   ├── categories.ts
 ```
 ---
 ## ✅ Todo / Improvements

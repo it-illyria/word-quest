@@ -32,6 +32,7 @@ export interface QuizResult {
     score: number;
     total: number;
     passed: boolean;
+    category: string;
 }
 
 export interface BattleState {
