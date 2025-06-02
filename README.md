@@ -67,6 +67,9 @@ cd word-quest
 ├   ├── HomePage.tsx
 ├   ├── Welcome.tsx
 ├   ├── TicTacToe.tsx
+├   ├── Badges.tsx
+├   ├── Progress.tsx
+├   ├── Dashboard.tsx
 ├── data/        # Fake Backend
 ├   ├── questions.json
 ├── Services/        # Project Services
