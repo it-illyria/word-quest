@@ -7,6 +7,7 @@ export type Question =
     correctAnswer: string;
     category: string;
     question?: undefined;
+    explanation?: string;
 }
     | {
     id: string;
@@ -16,6 +17,7 @@ export type Question =
     category: string;
     word?: undefined;
     definition?: undefined;
+    explanation?: string;
 };
 
 

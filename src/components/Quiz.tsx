@@ -11,7 +11,6 @@ import { mockSocket } from '../services/mockSocket';
 import { fetchQuestions } from '../services/mockApi';
 import Socket = SocketIOClient.Socket;
 import { normalizeCategory } from '../utils/categories';
-import { getQuestions } from '../services/question-loader';
 
 type QuizMode = 'solo' | 'battle';
 
@@ -39,6 +38,7 @@ const Quiz: React.FC<QuizProps> = ({
     const [passed, setPassed] = useState(false);
     const [timeLeft, setTimeLeft] = useState(10);
     const [incorrectAnswers, setIncorrectAnswers] = useState<string[]>([]);
+    const [incorrectQuestions, setIncorrectQuestions] = useState<Question[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [mode, setMode] = useState<QuizMode>('solo');
     const [socket, setSocket] = useState<Socket | null>(null);
@@ -166,6 +166,7 @@ const Quiz: React.FC<QuizProps> = ({
             setLearnMode(false);
             setPassed(false);
             setIncorrectAnswers([]);
+            setIncorrectQuestions([]);
         };
 
         loadQuestions();
@@ -260,11 +261,13 @@ const Quiz: React.FC<QuizProps> = ({
                 const finalScore = score + (isCorrect ? 1 : 0);
                 const didPass = finalScore / currentQuestions.length >= 0.7;
                 setPassed(didPass);
+                const incorrectQ = allQuestions.filter(q => incorrectAnswers.includes(q.id));
+                setIncorrectQuestions(incorrectQ);
                 setShowResult(true);
 
                 if (mode === 'solo') {
                     updateStreak();
-                    analyzePerformance(currentQuestions, [...incorrectAnswers, ...(isCorrect ? [] : [questionId])]);
+                    analyzePerformance(currentQuestions, incorrectAnswers);
 
                     const result: QuizResult = {
                         date: new Date().toLocaleString(),
@@ -291,7 +294,7 @@ const Quiz: React.FC<QuizProps> = ({
         incorrectAnswers, socket, userId, resetTimer, playCorrect,
         playWrong, playCompleted, playFailed, updateStreak,
         analyzePerformance, category, difficulty, scoreHistory,
-        updateProgress
+        updateProgress, allQuestions
     ]);
 
     // Restart quiz with same questions
@@ -303,11 +306,12 @@ const Quiz: React.FC<QuizProps> = ({
         setLearnMode(false);
         setPassed(false);
         setIncorrectAnswers([]);
+        setIncorrectQuestions([]);
         setCurrentQuestions(prepareQuestionsWithRandomizedChoices(currentQuestions));
         resetTimer();
     }, [currentQuestions, prepareQuestionsWithRandomizedChoices, resetTimer]);
 
-    // Get new set of questions
+    // Get a new set of questions
     const getNewQuestions = useCallback(() => {
         if (allQuestions.length === 0) return;
 
@@ -328,6 +332,7 @@ const Quiz: React.FC<QuizProps> = ({
         setLearnMode(false);
         setPassed(false);
         setIncorrectAnswers([]);
+        setIncorrectQuestions([]);
         resetTimer();
     }, [allQuestions, currentQuestions.length, prepareQuestionsWithRandomizedChoices, resetTimer]);
 
@@ -435,25 +440,10 @@ const Quiz: React.FC<QuizProps> = ({
                                 passed={passed}
                                 onRestart={handleRestart}
                                 onNewQuestions={getNewQuestions}
+                                incorrectQuestions={incorrectQuestions}
                             />
                             <MistakeAnalysis weakCategories={weakCategories} />
-                            {scoreHistory.length > 0 && (
-                                <div className="results-container">
-                                    <h3 className="results-title">Recent Results:</h3>
-                                    <ul className="results-list">
-                                        {scoreHistory.map((result, i) => (
-                                            <li key={i} className="results-item">
-                                                <div className="results-item-content">
-                                                    <span>{result.date}</span>
-                                                    <span className={`results-score ${result.passed ? 'passed' : 'failed'}`}>
-                                                        {result.score}/{result.total} ({Math.round((result.score / result.total) * 100)}%)
-                                                    </span>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
+
                             <button className="exit-button" onClick={onExit}>
                                 Exit Quiz
                             </button>
